@@ -17,10 +17,75 @@ modules:
 
   - type: rpm-ostree
     repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
-      # - micro
-      # - starship
+      - zsh
+      - starship
+      - syncthing
+      - rsync
+      - restic
+      - pwgen
+      - htop
+      - task
+      - fzf
+      - fasd
+      - ack
+      - git
+      - git-credential-libsecret
+      - curl
+      - moreutils
+      - dos2unix
+      - pipx
+      - python3-pip
+      - python3-virtualenvwrapper
+      - xclip
+      - sqlitebrowser
+      - sqlite
+      - java-latest-openjdk
+      - maven
+      - ghex
+      - lftp
+      - nodejs-npm
+      - mjpegtools-libs
+      - optipng
+      - jpegoptim
+      - exiv2
+      - entr
+      - openssl
+      - cmake
+      - gcc-c++
+      - podman-docker
+      - ansible
+      - ansible-collection-ansible-posix
+      - ansible-collection-community-docker
+      - ansible-packaging
+      - android-tools
+      - gitg
+      - tig
+      - gnuplot
+      - distrobox
+      - python3.11
+      - python3-cairo-devel
+      - gnome-shell-extension-caffeine
+      - firefox
+      - tmux
+      - neovim
+      - keepassxc
+      - hedgewars
+      - texlive-collection-bibtexextra
+      - texlive-collection-latexextra
+      - texlive-collection-langgerman
+      - texlive-collection-xetex
+      - texlive-hyphen-english
+      - texlive-pdfjam
+      - texlive-collection-fontsrecommended
+      - texlive-biblatex
+      - texlive-insbox
+      - texlive-latexpand
+      - texlive-sankey
+      - lilypond
+      - latexmk
+      - LaTeXML
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
