@@ -149,6 +149,9 @@ modules:
     remove:
       # conflicks with podman-docker
       - docker-ce
+      - docker-ce-cli
+			- docker-buildx-plugin
+			- docker-compose-plugin
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
