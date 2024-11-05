@@ -25,6 +25,10 @@ modules:
       - starship
       - fasd
       #- mjpegtools-libs
+      # external
+      - https://github.com/pulsar-edit/pulsar/releases/download/v1.122.0/Linux.pulsar-1.122.0.x86_64.rpm
+      - https://github.com/anyproto/anytype-ts/releases/download/v0.43.4/anytype-0.43.4.x86_64.rpm
+      - https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.rpm
       # foundation
       - neovim
       - zsh
@@ -147,11 +151,12 @@ modules:
       - latexmk
       - LaTeXML
     remove:
-      # conflicks with podman-docker
+      # conflicts with podman-docker
       - docker-ce
       - docker-ce-cli
       - docker-buildx-plugin
       - docker-compose-plugin
+      - docker-ce-rootless-extras
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
