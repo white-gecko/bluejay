@@ -1,11 +1,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: bluejay
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Where I live we have Eurasian jays and I like them. But the name bluejay sounds better and I also have a cap from those in Toronto, even though I know nothing about baseball. But this is my personal OS image ;-)
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 40 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
