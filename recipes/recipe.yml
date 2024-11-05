@@ -24,7 +24,7 @@ modules:
       # from corp repos
       - starship
       - fasd
-      - mjpegtools-libs
+      #- mjpegtools-libs
       # foundation
       - neovim
       - zsh
@@ -118,7 +118,7 @@ modules:
       - remmina-plugins-secret
       - remmina-plugins-vnc
       - cups-pdf
-      - mozilla-openh264
+      #- mozilla-openh264
       # system
       - NetworkManager-openconnect-gnome
       - NetworkManager-openvpn-gnome
