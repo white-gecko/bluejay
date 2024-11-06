@@ -29,7 +29,6 @@ modules:
       #- mjpegtools-libs
       # external
       - https://github.com/pulsar-edit/pulsar/releases/download/v1.122.0/Linux.pulsar-1.122.0.x86_64.rpm
-      - https://github.com/anyproto/anytype-ts/releases/download/v0.43.4/anytype-0.43.4.x86_64.rpm
       - https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.rpm
       # foundation
       - neovim
@@ -170,6 +169,20 @@ modules:
         # - org.mozilla.firefox
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+        - com.mattjakeman.ExtensionManager
+        - io.github.flattool.Warehouse
+        - io.missioncenter.MissionCenter
+        - org.signal.Signal
+        - re.sonny.Tangram
+        - org.gnome.Fractal
+        - io.gitlab.librewolf-community
+        - io.anytype.anytype
+        - app.drey.Dialect
+        - com.github.tchx84.Flatseal
+        - com.github.johnfactotum.Foliate
+        - de.schmidhuberj.DieBahn
+        - de.haeckerfelix.Shortwave
+        - org.gimp.GIMP
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
       # Installing different branches of the same Flatpak is not supported.
