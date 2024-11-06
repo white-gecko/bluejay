@@ -139,7 +139,6 @@ modules:
       - gnome-tweaks
       - gnome-shell-extension-caffeine
       - gnome-shell-extension-user-theme
-      - gnome-extensions-app
       - gnome-remote-desktop
       - gnome-browser-connector
       # texlive
