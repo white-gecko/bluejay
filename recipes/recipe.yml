@@ -164,6 +164,11 @@ modules:
       - docker-compose-plugin
       - docker-ce-rootless-extras
 
+  - type: script
+    snippets:
+      - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/share/applications/pulsar.desktop"
+      - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/bin/pulsar"
+    
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
