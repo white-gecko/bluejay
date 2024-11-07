@@ -6,6 +6,7 @@ After setup, it is recommended you update this README to describe your custom im
 
 ## Features
 
+- With [task](https://taskfile.dev/)
 - With running [pulsar](https://pulsar-edit.dev/)
 - With [podman](https://podman.io/) and podman-docker (docker is removed)
 - With [quarto](https://quarto.org/)

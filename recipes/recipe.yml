@@ -33,9 +33,9 @@ modules:
       # from corp repos
       - starship
       - fasd
-      #- mjpegtools-libs
+      #- mjpegtools-libs # <- in RPM Fusion but I'm unsure, why I needed this
       # external
-      - https://github.com/pulsar-edit/pulsar/releases/download/v1.122.0/Linux.pulsar-1.122.0.x86_64.rpm
+      - https://github.com/pulsar-edit/pulsar/releases/download/v1.122.0/Linux.pulsar-1.122.0.x86_64.rpm # see optfix and script below
       - https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.rpm
       # foundation
       - neovim
