@@ -213,4 +213,9 @@ modules:
       enabled:
         - syncthing.service
 
+  - type: files
+    files:
+      - source: system/etc
+        destination: /etc
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
