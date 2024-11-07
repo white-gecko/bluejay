@@ -189,6 +189,10 @@ modules:
         - de.schmidhuberj.DieBahn
         - de.haeckerfelix.Shortwave
         - org.gimp.GIMP
+        - fr.romainvigier.MetadataCleaner
+        - com.belmoussaoui.Decoder
+        - org.openstreetmap.josm
+        - app.drey.Warp
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
       # Installing different branches of the same Flatpak is not supported.

@@ -13,6 +13,12 @@ After setup, it is recommended you update this README to describe your custom im
 - LaTeX stuff
 - Many more packages
 
+## TODO
+
+- enable caffeine and quake terminal gnome-extensions per default
+- customize gnome application panel, remove software, vscode, help and trash
+- install organize-tool, poetry, ruff, git+https://github.com/enzet/map-machine
+
 ## Installation
 
 > **Warning**  
