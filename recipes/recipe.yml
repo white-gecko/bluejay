@@ -204,6 +204,10 @@ modules:
     install:
       - Quake Terminal
 
+  - type: gschema-overrides
+    include:
+      - zz1-bluejay.gschema.override
+
   - type: systemd
     user:
       enabled:

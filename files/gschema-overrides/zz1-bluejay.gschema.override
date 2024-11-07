@@ -1,0 +1,5 @@
+[org.gnome.desktop.wm.preferences]
+button-layout='close,maximize,minimize:'
+
+[org.gnome.desktop.interface]
+monospace-font-name='JetBrains Mono 10'
