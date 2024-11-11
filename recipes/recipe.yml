@@ -90,8 +90,7 @@ modules:
       - firefox
       - thunderbird
       - chromium
-      - libreoffice-core
-      - libreoffice-gtk4
+      - libreoffice
       - langpacks-de
       - langpacks-en
       - gimp
