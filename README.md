@@ -20,7 +20,12 @@ After setup, it is recommended you update this README to describe your custom im
   - configure quake terminal shortcut and terminal
 - customize gnome application panel, hide it per default, remove software, vscode, help and trash
 - install organize-tool, poetry, ruff, git+https://github.com/enzet/map-machine
--
+- default display scale to 100 % (why is it 125% ?)
+- manage dotfiles
+
+## per user
+- setup syncthing
+- setup zsh, oh my zsh and powerline
 
 ## Installation
 
