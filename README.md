@@ -15,9 +15,12 @@ After setup, it is recommended you update this README to describe your custom im
 
 ## TODO
 
+- Setup chezmoi
 - enable caffeine and quake terminal gnome-extensions per default
-- customize gnome application panel, remove software, vscode, help and trash
+  - configure quake terminal shortcut and terminal
+- customize gnome application panel, hide it per default, remove software, vscode, help and trash
 - install organize-tool, poetry, ruff, git+https://github.com/enzet/map-machine
+-
 
 ## Installation
 
