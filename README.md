@@ -23,7 +23,6 @@ After setup, it is recommended you update this README to describe your custom im
 - customize gnome application panel, remove software, vscode, help and trash
 - install with:
   - brew:
-    - oh-my-posh
     - chezmoi
     - poetry
     - ruff
