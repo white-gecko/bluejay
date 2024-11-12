@@ -18,9 +18,9 @@ After setup, it is recommended you update this README to describe your custom im
 - Setup chezmoi
 - enable caffeine and quake terminal gnome-extensions per default
   - configure quake terminal shortcut and terminal
-- remove dash-to-dock
-- install default gnome editor
-- customize gnome application panel, hide it per default, remove software, vscode, help and trash
+- disbale and remove dash-to-dock
+- disbale and remove logo-menu
+- customize gnome application panel, remove software, vscode, help and trash
 - install with:
   - brew:
     - oh-my-posh
