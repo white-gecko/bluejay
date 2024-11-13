@@ -207,6 +207,9 @@ modules:
   - type: gnome-extensions
     install:
       - Quake Terminal
+    uninstall:
+      - Dash to Dock
+      - Logo Menu
 
   - type: gschema-overrides
     include:
