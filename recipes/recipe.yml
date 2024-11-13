@@ -115,6 +115,8 @@ modules:
       - baobab
       - evince
       - evince-djvu
+      - eog
+      - eog-plugins
       - diffpdf
       - xournal
       - pdftk-java
