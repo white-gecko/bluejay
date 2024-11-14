@@ -94,7 +94,6 @@ modules:
       - libreoffice
       - langpacks-de
       - langpacks-en
-      - gimp
       - qgis
       - qcad
       - simple-scan
