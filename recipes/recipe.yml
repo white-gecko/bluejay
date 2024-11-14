@@ -107,8 +107,6 @@ modules:
       - musescore
       - file-roller-nautilus
       - cheese
-      - dialect
-      - foliate
       - calls
       - baobab
       - evince
