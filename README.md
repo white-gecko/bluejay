@@ -27,7 +27,7 @@ After setup, it is recommended you update this README to describe your custom im
 - manage dotfiles with chezmoi
 - Default applicatiosn:
   - editor: nvim
-  - browser: librewolf
+  - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
 
 ## per user
 - setup syncthing
