@@ -212,6 +212,11 @@ modules:
     uninstall:
       - Dash to Dock
       - Logo Menu
+      - Background Logo
+      - Window List
+      - Places Status Indicator
+      - Launch new instance
+      - Apps Menu
 
   - type: gschema-overrides
     include:
