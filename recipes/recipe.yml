@@ -165,6 +165,9 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - docker-ce-rootless-extras
+      - gnome-shell-extension-background-logo
+      - gnome-shell-extension-logo-menu
+      - gnome-shell-extension-dash-to-dock
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -209,14 +212,6 @@ modules:
   - type: gnome-extensions
     install:
       - Quake Terminal
-    uninstall:
-      - Dash to Dock
-      - Logo Menu
-      - Background Logo
-      - Window List
-      - Places Status Indicator
-      - Launch new instance
-      - Apps Menu
 
   - type: gschema-overrides
     include:
