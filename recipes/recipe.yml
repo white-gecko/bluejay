@@ -53,9 +53,6 @@ modules:
       - curl
       - moreutils
       - dos2unix
-      - pipx
-      - python3-pip
-      - python3-virtualenvwrapper
       - xclip
       # development
       - sqlitebrowser
@@ -63,7 +60,6 @@ modules:
       - java-latest-openjdk
       - maven
       - ghex
-      - lftp
       - nodejs-npm
       - optipng
       - jpegoptim
@@ -82,6 +78,9 @@ modules:
       - tig
       - gnuplot
       - distrobox
+      - pipx
+      - python3-pip
+      - python3-virtualenvwrapper
       # development for pywb
       - python3.11
       - python3-cairo-devel
