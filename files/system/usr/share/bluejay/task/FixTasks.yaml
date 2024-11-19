@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  windows:
+    desc: Fix the systemclock in a linux and windows dualboot setup
+    cmds:
+      - timedatectl set-local-rtc 1 --adjust-system-clock

@@ -1,0 +1,12 @@
+version: '3'
+
+includes:
+  build: ./task/FixTask.yaml
+  setup: ./task/SetupTask.yaml
+
+tasks:
+  default:
+    desc: utask is just like ujust a Taskfile that contains some maintenance tasks to be executed. The available tasks are listed here
+    aliases: ["help"]
+    cmds:
+      - utask -l

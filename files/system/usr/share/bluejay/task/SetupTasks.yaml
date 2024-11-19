@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  gpg:
+    desc: Install the user GPG keys from your keepass
+    cmds:
+      - echo "TODO"
