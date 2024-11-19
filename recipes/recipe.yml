@@ -55,6 +55,7 @@ modules:
       - dos2unix
       - xclip
       # development
+      - gnome-boxes
       - sqlitebrowser
       - sqlite
       - java-latest-openjdk
