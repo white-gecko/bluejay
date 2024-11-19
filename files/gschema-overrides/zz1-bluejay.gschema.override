@@ -1,5 +1,5 @@
 [org.gnome.desktop.wm.preferences]
-button-layout='close,maximize,minimize:'
+button-layout='close:'
 
 [org.gnome.desktop.interface]
 monospace-font-name='JetBrains Mono 10'
@@ -16,6 +16,12 @@ terminal-shortcut=['F12']
 vertical-size=60
 terminal-id='org.gnome.Ptyxis.desktop'
 render-on-primary-monitor=true
+
+[org.gnome.nautilus.icon-view]
+default-zoom-level='small-plus'
+
+[org.gnome.nautilus.list-view]
+default-zoom-level='small'
 
 [org.gnome.Ptyxis.Shortcuts]
 primary-menu=''
