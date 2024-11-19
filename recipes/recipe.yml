@@ -220,7 +220,7 @@ modules:
 
   - type: files
     files:
-      - source: system/etc
-        destination: /etc
+      - source: system
+        destination: /
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
