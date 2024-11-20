@@ -1,8 +1,8 @@
 version: '3'
 
 includes:
-  build: ./task/FixTask.yaml
-  setup: ./task/SetupTask.yaml
+  build: ./task/FixTasks.yaml
+  setup: ./task/SetupTasks.yaml
 
 tasks:
   default:
