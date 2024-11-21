@@ -28,6 +28,7 @@ After setup, it is recommended you update this README to describe your custom im
 - Default applicatiosn:
   - editor: nvim
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
+- cups pdf printer
 
 ## per user
 - setup syncthing
