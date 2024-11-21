@@ -144,13 +144,16 @@ modules:
       - gnome-remote-desktop
       - gnome-browser-connector
       # texlive
+      # texlive-scheme-medium
+      - texlive-scheme-full
+      - texlive-collection-basic
+      - texlive-collection-fontsrecommended
       - texlive-collection-bibtexextra
       - texlive-collection-latexextra
       - texlive-collection-langgerman
       - texlive-collection-xetex
       - texlive-hyphen-english
       - texlive-pdfjam
-      - texlive-collection-fontsrecommended
       - texlive-biblatex
       - texlive-insbox
       - texlive-latexpand
