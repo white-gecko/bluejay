@@ -3,6 +3,9 @@ version: '3'
 includes:
   build: ./task/FixTasks.yaml
   setup: ./task/SetupTasks.yaml
+  user:
+    taskfile: "{{.HOME}}/.local/share/bluejay/Taskfile.yaml"
+    optional: true
 
 tasks:
   default:

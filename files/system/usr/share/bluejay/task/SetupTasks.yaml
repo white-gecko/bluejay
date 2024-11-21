@@ -1,6 +1,15 @@
 version: '3'
 
 tasks:
+  user-tasks:
+    desc: Create a user Taskfile for custom tasks.
+    env:
+      USER_TASK: "{{.HOME}}/.local/share/bluejay/Taskfile.yaml"
+    cmds:
+      - test ! -f "$USER_TASK" || (echo "The user Taskfile already exists at $USER_TASK". && exit 1)
+      - mkdir -p "${USER_TASK%/*}" && touch "$USER_TASK"
+      - "echo \"version: '3'\n\ntasks:\n  welcome:\n    desc: Your welcome task.\n    cmds:\n      - echo \\\"Hello bluejay\\\"\" > $USER_TASK"
+      - echo "Your new Taskfile is at '$USER_TASK'"
   gpg:
     desc: Install the user GPG keys from your keepass
     cmds:
