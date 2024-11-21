@@ -144,8 +144,7 @@ modules:
       - gnome-remote-desktop
       - gnome-browser-connector
       # texlive
-      # texlive-scheme-medium
-      - texlive-scheme-full
+      - texlive-scheme-medium
       - texlive-collection-basic
       - texlive-collection-fontsrecommended
       - texlive-collection-bibtexextra
