@@ -23,5 +23,8 @@ default-zoom-level='small-plus'
 [org.gnome.nautilus.list-view]
 default-zoom-level='small'
 
+[org.gnome.Ptyxis]
+interface-style='dark'
+
 [org.gnome.Ptyxis.Shortcuts]
 primary-menu=''
