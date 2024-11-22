@@ -8,7 +8,7 @@ monospace-font-name='JetBrains Mono 10'
 natural-scroll=false
 
 [org.gnome.shell]
-favorite-apps=['org.gnome.Nautilus.desktop', 're.sonny.Tangram.desktop', 'io.anytype.anytype.desktop', 'io.gitlab.librewolf-community.desktop', 'org.keepassxc.KeePassXC.desktop', 'org.signal.Signal.desktop', 'org.gnome.Fractal.desktop', 'de.haeckerfelix.Shortwave.desktop']
+favorite-apps=['io.gitlab.librewolf-community.desktop', 're.sonny.Tangram.desktop', 'org.gnome.Fractal.desktop', 'org.signal.Signal.desktop', 'org.keepassxc.KeePassXC.desktop', 'io.anytype.anytype.desktop', 'de.haeckerfelix.Shortwave.desktop', 'org.gnome.Nautilus.desktop']
 enabled-extensions=['tailscale@joaophi.github.com', 'search-light@icedman.github.com', 'caffeine@patapon.info', 'quake-terminal@diegodario88.github.io', 'blur-my-shell@aunetx', 'appindicatorsupport@rgcjonas.gmail.com']
 
 [org.gnome.shell.extensions.quake-terminal]
