@@ -14,3 +14,8 @@ tasks:
     desc: Install the user GPG keys from your keepass
     cmds:
       - echo "TODO"
+  p10k:
+    aliases: ["powerlevel10k"]
+    desc: Install powerlevel10k into the Oh-my-Zsh directory
+    cmds:
+      - git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
