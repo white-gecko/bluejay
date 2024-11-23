@@ -144,22 +144,22 @@ modules:
       - gnome-remote-desktop
       - gnome-browser-connector
       # texlive
-      - texlive-scheme-medium
-      - texlive-collection-basic
-      - texlive-collection-fontsrecommended
-      - texlive-collection-bibtexextra
-      - texlive-collection-latexextra
-      - texlive-collection-langgerman
-      - texlive-collection-xetex
-      - texlive-hyphen-english
-      - texlive-pdfjam
-      - texlive-biblatex
-      - texlive-insbox
-      - texlive-latexpand
-      - texlive-sankey
-      - lilypond
-      - latexmk
-      - LaTeXML
+      #- texlive-scheme-medium
+      #- texlive-collection-basic
+      #- texlive-collection-fontsrecommended
+      #- texlive-collection-bibtexextra
+      #- texlive-collection-latexextra
+      #- texlive-collection-langgerman
+      #- texlive-collection-xetex
+      #- texlive-hyphen-english
+      #- texlive-pdfjam
+      #- texlive-biblatex
+      #- texlive-insbox
+      #- texlive-latexpand
+      #- texlive-sankey
+      #- lilypond
+      #- latexmk
+      #- LaTeXML
     remove:
       # conflicts with podman-docker
       - docker-ce
