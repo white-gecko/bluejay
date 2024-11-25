@@ -210,10 +210,6 @@ modules:
     scripts:
       - fix-pulsar.sh
 
-  - type: script
-    scripts:
-      - cups-pdf.sh
-
   - type: gnome-extensions
     install:
       - Quake Terminal

@@ -21,3 +21,10 @@ tasks:
     desc: Install powerlevel10k into the Oh-my-Zsh directory
     cmds:
       - git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+  cups-pdf:
+    desc: |
+      Add the cups-pdf printer
+      This might breakt at some time: https://github.com/OpenPrinting/cups-sharing/issues/4"
+    cmds:
+      - lpadmin -p Cups-PDF -D "Print to a PDF file" -v cups-pdf:/ -m CUPS-PDF_noopt.ppd -E
