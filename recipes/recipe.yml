@@ -210,9 +210,8 @@ modules:
       # - org.gnome.eog
 
   - type: script
-    snippets:
-      - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/share/applications/pulsar.desktop"
-      - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/bin/pulsar"
+    scripts:
+      - fix-pulsar.sh
 
   - type: script
     scripts:
