@@ -130,8 +130,9 @@ modules:
       - remmina-plugins-rdp
       - remmina-plugins-secret
       - remmina-plugins-vnc
-      - cups-pdf
       #- mozilla-openh264
+      # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
+      - cups-pdf
       # system
       - NetworkManager-openconnect-gnome
       - NetworkManager-openvpn-gnome
@@ -212,6 +213,10 @@ modules:
     snippets:
       - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/share/applications/pulsar.desktop"
       - "sed -i 's|/opt/Pulsar|/usr/lib/opt/Pulsar|g' /usr/bin/pulsar"
+
+  - type: script
+    scripts:
+      - cups-pdf.sh
 
   - type: gnome-extensions
     install:
