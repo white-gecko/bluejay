@@ -6,16 +6,16 @@ After setup, it is recommended you update this README to describe your custom im
 
 ## Features
 
-- With [task](https://taskfile.dev/)
+- With [task](https://taskfile.dev/) and `utask`, just like `ujust`.
 - With running [pulsar](https://pulsar-edit.dev/)
 - With [podman](https://podman.io/) and podman-docker (docker is removed)
 - With [quarto](https://quarto.org/)
-- LaTeX stuff
 - Many more packages
 
 ## TODO
 
 - Setup chezmoi
+- cups pdf printer
 - install with:
   - brew:
     - chezmoi
@@ -24,15 +24,11 @@ After setup, it is recommended you update this README to describe your custom im
   - pipx:
     - organize-tool
     - git+https://github.com/enzet/map-machine
-- manage dotfiles with chezmoi
 - Default applicatiosn:
-  - editor: nvim
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
-- cups pdf printer
 
 ## per user
 - setup syncthing
-- setup zsh, oh my zsh and powerline
 
 ## Installation
 
@@ -71,3 +67,17 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/white-gecko/bluejay
 ```
+
+## Setup
+
+There is the `utask` command, just like `ujust`, but with [task](https://taskfile.dev/).
+
+### Configure the powerlevel10k prompt
+
+```
+utask setup:p10k
+```
+
+### Use LaTeX
+
+To use latex install it in a toolbox, install zsh fasd fzf task texlive-import texlive-scheme-medium.
