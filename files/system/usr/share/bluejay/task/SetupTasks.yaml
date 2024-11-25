@@ -10,10 +10,12 @@ tasks:
       - mkdir -p "${USER_TASK%/*}" && touch "$USER_TASK"
       - "echo \"version: '3'\n\ntasks:\n  welcome:\n    desc: Your welcome task.\n    cmds:\n      - echo \\\"Hello bluejay\\\"\" > $USER_TASK"
       - echo "Your new Taskfile is at '$USER_TASK'"
+
   gpg:
     desc: Install the user GPG keys from your keepass
     cmds:
       - echo "TODO"
+
   p10k:
     aliases: ["powerlevel10k"]
     desc: Install powerlevel10k into the Oh-my-Zsh directory
