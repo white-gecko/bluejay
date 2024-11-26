@@ -5,6 +5,7 @@ includes:
   setup: ./task/SetupTasks.yaml
   user:
     taskfile: "{{.HOME}}/.local/share/bluejay/Taskfile.yaml"
+    dir: "{{.HOME}}/.local/share/bluejay/"
     optional: true
 
 tasks:
