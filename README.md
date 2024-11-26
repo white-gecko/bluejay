@@ -15,7 +15,6 @@ After setup, it is recommended you update this README to describe your custom im
 ## TODO
 
 - Setup chezmoi
-- cups pdf printer
 - install with:
   - brew:
     - chezmoi
@@ -29,6 +28,7 @@ After setup, it is recommended you update this README to describe your custom im
 
 ## per user
 - setup syncthing
+- setup wifis
 
 ## Installation
 
