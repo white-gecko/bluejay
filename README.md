@@ -30,7 +30,6 @@ After setup, it is recommended you update this README to describe your custom im
   - idle toes
   - panda
   - tender
-- find fasd alternative for fish
 
 
 ## per user
