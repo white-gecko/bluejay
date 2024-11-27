@@ -226,4 +226,8 @@ modules:
       - source: system
         destination: /
 
+  - type: script
+    scripts:
+      - disable-nano.sh
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
