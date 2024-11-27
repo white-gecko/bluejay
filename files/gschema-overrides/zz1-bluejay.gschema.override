@@ -23,12 +23,6 @@ default-zoom-level='small-plus'
 [org.gnome.nautilus.list-view]
 default-zoom-level='small'
 
-[org.gnome.Ptyxis]
-interface-style='dark'
-
-[org.gnome.Ptyxis.Shortcuts]
-primary-menu=''
-
 [org.gnome.TextEditor]
 restore-session=false
 highlight-current-line=true
@@ -37,3 +31,18 @@ show-map=true
 tab-width=uint32 4
 indent-style='space'
 show-line-numbers=true
+
+[org.gnome.Ptyxis]
+interface-style='dark'
+default-profile-uuid='36766c06a247d71420b905ac672259bc'
+profile-uuids=['36766c06a247d71420b905ac672259bc']
+
+[org.gnome.Ptyxis.Shortcuts]
+primary-menu=''
+
+[org.gnome.Ptyxis.Profile:/org/gnome/Ptyxis/Profiles/36766c06a247d71420b905ac672259bc/]
+bold-is-bright=false
+label='BlueJay'
+login-shell=false
+opacity=0.85
+palette='Idle Toes'
