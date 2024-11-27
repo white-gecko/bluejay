@@ -37,6 +37,7 @@ modules:
       - https://github.com/pulsar-edit/pulsar/releases/download/v1.123.0/Linux.pulsar-1.123.0.x86_64.rpm # see optfix and script below
       - https://github.com/go-task/task/releases/download/v3.40.0/task_linux_amd64.rpm
       # foundation
+      - eza # alternative to ls
       - neovim
       - gnome-text-editor
       - syncthing
