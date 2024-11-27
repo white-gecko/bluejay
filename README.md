@@ -7,6 +7,7 @@ After setup, it is recommended you update this README to describe your custom im
 ## Features
 
 - With [task](https://taskfile.dev/) and `utask`, just like `ujust`.
+- With [fish](https://fishshell.com/) and [starship](https://starship.rs/)
 - With running [pulsar](https://pulsar-edit.dev/)
 - With [podman](https://podman.io/) and podman-docker (docker is removed)
 - With [quarto](https://quarto.org/)
@@ -23,8 +24,14 @@ After setup, it is recommended you update this README to describe your custom im
   - pipx:
     - organize-tool
     - git+https://github.com/enzet/map-machine
-- Default applicatiosn:
+- Default applications:
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
+- Set terminal profile to one of these palettes:
+  - idle toes
+  - panda
+  - tender
+- find fasd alternative for fish
+
 
 ## per user
 - setup syncthing
