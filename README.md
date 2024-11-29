@@ -18,7 +18,9 @@ After setup, it is recommended you update this README to describe your custom im
 - Setup chezmoi
   - organize fisher plugin management
   - KeePassXC features
-- starship two line prompt
+- starship
+  - two line prompt
+  - nerdfont
 - fish autocompletion for task and python click commands
 - install with:
   - brew:
