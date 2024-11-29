@@ -32,6 +32,7 @@ After setup, it is recommended you update this README to describe your custom im
     - git+https://github.com/enzet/map-machine
 - Default applications:
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
+- librewolf <-> keepassxc
 - xdg-open . -> open -> o
 
 ## per user
