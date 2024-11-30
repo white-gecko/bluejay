@@ -20,7 +20,6 @@ After setup, it is recommended you update this README to describe your custom im
   - KeePassXC features
 - starship
   - nerdfont
-- fish autocompletion for task and python click commands
 - install with:
   - brew:
     - chezmoi
