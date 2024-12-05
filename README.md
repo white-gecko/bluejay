@@ -17,7 +17,6 @@ After setup, it is recommended you update this README to describe your custom im
 
 - Setup chezmoi
   - organize fisher plugin management
-  - KeePassXC features
 - starship
   - nerdfont
 - install with:
@@ -30,7 +29,6 @@ After setup, it is recommended you update this README to describe your custom im
     - git+https://github.com/enzet/map-machine
 - Default applications:
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
-- librewolf <-> keepassxc
 
 ## per user
 - setup syncthing
