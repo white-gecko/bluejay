@@ -146,7 +146,6 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - docker-ce-rootless-extras
-      - gnome-shell-extension-background-logo
       - gnome-shell-extension-logo-menu
       - gnome-shell-extension-dash-to-dock
 
