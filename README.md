@@ -19,21 +19,9 @@ After setup, it is recommended you update this README to describe your custom im
   - organize fisher plugin management
 - starship
   - nerdfont
-- install with:
-  - brew:
-    - chezmoi
-    - poetry
-    - ruff
-  - pipx:
-    - organize-tool
-    - git+https://github.com/enzet/map-machine
 - Default applications:
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
-
-## per user
-- setup syncthing
-- setup wifis
-- setup printers
+- open -> open .
 
 ## Installation
 

@@ -5,3 +5,63 @@ tasks:
     desc: Fix the systemclock in a linux and windows dualboot setup
     cmds:
       - timedatectl set-local-rtc 1 --adjust-system-clock
+
+  keepassxc-librewolf:
+    desc: |
+      Fix KeepassXC to work with Firefox/LibreWolf if both run in a flatpak. Following the instructions of:
+      https://discourse.flathub.org/t/how-to-run-firefox-and-keepassxc-in-a-flatpak-and-get-the-keepassxc-browser-add-on-to-work/437
+    cmds:
+      - task: keepassxc-librewolf:start-keepassxc-proxy
+      - task: keepassxc-librewolf:allow-access
+      - #task: keepassxc-librewolf:expose-socket
+
+  keepassxc-librewolf:start-keepassxc-proxy:
+    desc: |
+      CANID:
+      Firefox: `org.mozilla.firefox` uses `.mozilla`
+      LibreWolf: `io.gitlab.librewolf-community` uses `.librewolf`
+    vars:
+      CANID: io.gitlab.librewolf-community
+      DOT_CANID: .librewolf
+      NATIVE_MESSAGING_HOSTS: "{{.HOME}}/.var/app/{{.CANID}}/{{.DOT_CANID}}/native-messaging-hosts"
+    cmds:
+      - mkdir -p {{.NATIVE_MESSAGING_HOSTS}}
+      - curl -L -o {{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy https://github.com/white-gecko/keepassxc-proxy-rust/releases/download/nightly-tag-2024-12-05/keepassxc-proxy
+      - chmod +x {{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy
+      - |
+        echo '{
+            "allowed_extensions": [
+                "keepassxc-browser@keepassxc.org"
+            ],
+            "description": "KeePassXC integration with native messaging support, workaround for flatpaked Firefox, LibreWolf, or one of the dogs, see https://is.gd/flatpakFirefoxKPXC",
+            "name": "org.keepassxc.keepassxc_browser",
+            "path": "{{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy",
+            "type": "stdio"
+        }' > {{.NATIVE_MESSAGING_HOSTS}}/org.keepassxc.keepassxc_browser.json
+
+  keepassxc-librewolf:allow-access:
+    desc: Allowing Firefox to access the socket
+    vars:
+      CANID: io.gitlab.librewolf-community
+    cmds:
+      - sudo flatpak override --filesystem=xdg-run/org.keepassxc.KeePassXC.BrowserServer:ro {{.CANID}}
+
+  keepassxc-librewolf:expose-socket:
+    desc: Exposing the UNIX socket from the KeePassXC flatpak, if KeepassXC is running in a flatpak
+    vars:
+      USER_TMP: "{{.HOME}}/.local/share/user-tmpfiles.d"
+    cmds:
+      - mkdir -p {{.USER_TMP}}
+      - |
+        echo "
+        # This file creates a symbolic link for the KeePassXC UNIX socket.
+        # This makes it possible to access the UNIX socket under it's "usual" path
+        # in $XDG_RUNTIME_DIR by creating a symbolic link pointing inside the
+        # flatpak-specific dir.
+        # see https://is.gd/flatpakFirefoxKPXC
+
+        # %t = $XDG_RUNTIME_DIR (if run as user), see "man tmpfiles.d"
+
+        # type	path		mode	UID 	GID 	Age		Argument
+        L	%t/kpxc_server	-	-	-	-		%t/app/org.keepassxc.KeePassXC/org.keepassxc.KeePassXC.BrowserServer
+        " > {{.USER_TMP}}/kpxc_server.conf

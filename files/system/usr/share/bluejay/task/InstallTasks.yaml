@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+  upkgs:
+    aliases: ["user-packages"]
+    desc: Install userspace packages
+    cmds:
+      - task: upkgs:brew
+      - task: upkgs:pipx
+
+  upkgs:brew:
+    desc: Install homebrew packages
+    cmds:
+      - |
+        brew install \
+          chezmoi \
+          poetry \
+          ruff \
+          ncspot
+
+  upkgs:pipx:
+    desc: Install pipx packages
+    cmds:
+      - |
+        pipx install \
+          organize-tool \
+          git+https://github.com/enzet/map-machine \
+          git+https://github.com/white-gecko/git-watchtower
