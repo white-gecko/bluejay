@@ -1,0 +1,7 @@
+version: 3
+
+tasks:
+  build:iso:
+    desc: Build an ISO image for bluejay
+    cmds:
+      - sudo bluebuild generate-iso --variant silverblue image ghcr.io/white-gecko/bluejay:latest
