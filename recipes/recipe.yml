@@ -92,7 +92,7 @@ modules:
       - langpacks-de
       - langpacks-en
       - qgis
-      - qcad
+      #- qcad
       - simple-scan
       - ocrmypdf
       - tesseract-langpack-deu
