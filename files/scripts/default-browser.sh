@@ -11,7 +11,6 @@ set -oue pipefail
 echo "Set LibreWolf as default browser"
 CANID="io.gitlab.librewolf-community"
 MIMEAPPS="/usr/share/applications/mimeapps.list"
-MIMEAPPS="mimeapps.list"
 for mime in "text/html" "application/xhtml+xml" "x-scheme-handler/http" "x-scheme-handler/https"
 do
   if grep "^${mime}=.*\$" ${MIMEAPPS}
