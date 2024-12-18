@@ -43,8 +43,8 @@ tasks:
       - echo "TODO"
 
   printers:cups-pdf:
-    desc: |
-      Add the cups-pdf printer
+    desc: Add the cups-pdf printer
+    summary: |
       This might breakt at some time: https://github.com/OpenPrinting/cups-sharing/issues/4"
     cmds:
       - lpadmin -p Cups-PDF -D "Print to a PDF file" -v cups-pdf:/ -m CUPS-PDF_noopt.ppd -E

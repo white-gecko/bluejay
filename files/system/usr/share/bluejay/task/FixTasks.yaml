@@ -7,16 +7,24 @@ tasks:
       - timedatectl set-local-rtc 1 --adjust-system-clock
 
   keepassxc-librewolf:
-    desc: |
+    desc: Fix KeepassXC to work with LibreWolf
+    summary: |
       Fix KeepassXC to work with Firefox/LibreWolf if both run in a flatpak. Following the instructions of:
       https://discourse.flathub.org/t/how-to-run-firefox-and-keepassxc-in-a-flatpak-and-get-the-keepassxc-browser-add-on-to-work/437
+      - Configure to start the keepassxc proxy
+      - Allow access for the fox to the socket
+      - Expose the socket
+      The last two steps don't appear to be required in the current setup to work.
     cmds:
       - task: keepassxc-librewolf:start-keepassxc-proxy
-      - task: keepassxc-librewolf:allow-access
+      - #task: keepassxc-librewolf:allow-access
       - #task: keepassxc-librewolf:expose-socket
 
   keepassxc-librewolf:start-keepassxc-proxy:
-    desc: |
+    desc: Setup the proxy initialization.
+    summary: |
+      Configure the wolf/fox/dog you are using with the CANID variable.
+
       CANID:
       Firefox: `org.mozilla.firefox` uses `.mozilla`
       LibreWolf: `io.gitlab.librewolf-community` uses `.librewolf`
