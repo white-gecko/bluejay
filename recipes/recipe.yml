@@ -182,6 +182,11 @@ modules:
     install:
       - Quake Terminal
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
   - type: files
     files:
       - source: system

@@ -17,8 +17,6 @@ After setup, it is recommended you update this README to describe your custom im
 
 - Setup chezmoi
   - organize fisher plugin management
-- starship
-  - nerdfont
 
 ## Installation
 
