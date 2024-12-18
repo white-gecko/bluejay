@@ -11,7 +11,9 @@ includes:
 
 tasks:
   default:
-    desc: utask is just like ujust a Taskfile that contains some maintenance tasks to be executed. The available tasks are listed here
+    desc: utask is just like ujust
+    summary: |
+      A Taskfile that contains some maintenance tasks to be executed. The available tasks are listed here.
     aliases: ["help"]
     cmds:
       - utask -l
