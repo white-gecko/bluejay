@@ -201,5 +201,6 @@ modules:
       - install-quarto.sh
       - fix-pulsar.sh
       - disable-nano.sh
+      - default-browser.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
