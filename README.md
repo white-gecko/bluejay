@@ -21,7 +21,6 @@ After setup, it is recommended you update this README to describe your custom im
   - nerdfont
 - Default applications:
   - browser: librewolf `xdg-settings set default-web-browser io.gitlab.librewolf-community.desktop`
-- open -> open .
 
 ## Installation
 
