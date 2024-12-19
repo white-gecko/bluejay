@@ -17,11 +17,11 @@ for mimefile in ${MIMEAPPS} ${GNOME_MIMEAPPS}
 do
   for mime in "text/html" "application/xhtml+xml" "x-scheme-handler/http" "x-scheme-handler/https"
   do
-    if grep "^${mime}=.*\$" ${MIMEAPPS}
+    if grep "^${mime}=.*\$" ${mimefile}
     then
-      sed -i "s|^${mime}=.*$|${mime}=${CANID}.desktop|g" ${MIMEAPPS}
+      sed -i "s|^${mime}=.*$|${mime}=${CANID}.desktop|g" ${mimefile}
     else
-      echo "${mime}=${CANID}.desktop" >> ${MIMEAPPS}
+      echo "${mime}=${CANID}.desktop" >> ${mimefile}
     fi
   done
 done
