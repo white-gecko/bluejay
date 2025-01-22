@@ -6,7 +6,7 @@
 set -oue pipefail
 
 # Your code goes here.
-curl -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.32/quarto-1.6.32-linux-amd64.tar.gz > /tmp/quarto.tar.gz
+curl -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.40/quarto-1.6.40-linux-amd64.tar.gz > /tmp/quarto.tar.gz
 mkdir /usr/share/quarto
 tar -C /usr/share/quarto --strip-components=1 -xvzf /tmp/quarto.tar.gz
 ln -s /usr/share/quarto/bin/quarto /usr/bin/quarto
