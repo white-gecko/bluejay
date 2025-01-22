@@ -29,7 +29,12 @@ tasks:
 
   yarn:
     aliases: ["corepack"]
-    desc: Enable yarn via corepack, and also install corepack since it is not available in the fedora packages
+    desc: Enable yarn via corepack
+    summary: |
+      Setup npm to install global packages for the user.
+      Install corepack since it is not available in the fedora packages.
+      Then yarn should be available.
+      See also: https://yarnpkg.com/corepack#installation
     cmds:
       - |
         echo "Setup user config path for npm …"
