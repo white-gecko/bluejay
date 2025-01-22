@@ -26,3 +26,14 @@ tasks:
           organize-tool \
           git+https://github.com/enzet/map-machine \
           git+https://github.com/white-gecko/git-watchtower
+
+  yarn:
+    aliases: ["corepack"]
+    desc: Enable yarn via corepack, and also install corepack since it is not available in the fedora packages
+    cmds:
+      - |
+        echo "Setup user config path for npm …"
+        npm config set prefix '~/.local/'
+        echo "Install corepack"
+        npm install -g corepack
+        echo "Now yarn should be available"
