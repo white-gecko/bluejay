@@ -27,6 +27,13 @@ tasks:
           git+https://github.com/enzet/map-machine \
           git+https://github.com/white-gecko/git-watchtower
 
+  upkgs:ppm:
+    aliases: ["upkgs:pulsar"]
+    desc: Install pulsar packages
+    cmds:
+      - |
+        ppm install language-vue
+
   yarn:
     aliases: ["corepack"]
     desc: Enable yarn via corepack
