@@ -4,7 +4,7 @@ tasks:
   windows:
     desc: Fix the systemclock in a linux and windows dualboot setup
     cmds:
-      - timedatectl set-local-rtc 1 --adjust-system-clock
+      - /bin/timedatectl set-local-rtc 1 --adjust-system-clock
 
   keepassxc-librewolf:
     desc: Fix KeepassXC to work with LibreWolf
