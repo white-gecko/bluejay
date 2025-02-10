@@ -16,7 +16,10 @@ tasks:
           chezmoi \
           poetry \
           ruff \
-          ncspot
+          ncspot \
+          minikube \
+          kubernetes-cli \
+          openshift-cli
 
   upkgs:pipx:
     desc: Install pipx packages
