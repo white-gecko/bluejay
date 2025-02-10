@@ -52,3 +52,16 @@ tasks:
         echo "Install corepack"
         npm install -g corepack
         echo "Now yarn should be available"
+
+  docker-cli:
+    desc: Install just the docker CLI
+    summary: |
+      Since this system uses podman and has set docker as alias for podman, there is not docker.
+      If you need docker e.g. to connect to the minikube docker host this script just loads the docker cli from a docker:dind image.
+    cmds:
+      - |
+        dind_container_id=$(podman create docker.io/docker:dind)
+        podman cp ${dind_container_id}:/usr/local/bin/docker ~/.local/bin/docker-cli
+        podman rm ${dind_container_id}
+        echo "You could now run `podman rmi `docker.io/docker:dind` if you like"
+        echo "The Docker CLI is now available as `docker-cli`"
