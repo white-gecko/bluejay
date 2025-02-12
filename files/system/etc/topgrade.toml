@@ -1,2 +1,2 @@
 [misc]
-disable = ["poetry", "containers"]
+disable = ["containers"]
