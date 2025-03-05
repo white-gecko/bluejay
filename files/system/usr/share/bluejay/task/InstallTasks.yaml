@@ -14,8 +14,6 @@ tasks:
       - |
         brew install \
           chezmoi \
-          poetry \
-          ruff \
           ncspot \
           minikube \
           kubernetes-cli \
@@ -26,6 +24,8 @@ tasks:
     cmds:
       - |
         pipx install \
+          poetry \
+          ruff \
           organize-tool \
           git+https://github.com/enzet/map-machine \
           git+https://github.com/white-gecko/git-watchtower
