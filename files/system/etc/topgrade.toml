@@ -1,2 +1,5 @@
 [misc]
 disable = ["containers"]
+
+[linux]
+rpm_ostree = true
