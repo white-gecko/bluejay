@@ -151,27 +151,27 @@ modules:
         # - org.mozilla.firefox
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+        - app.drey.Dialect
+        - app.drey.Warp
+        - com.belmoussaoui.Decoder
+        - com.github.johnfactotum.Foliate
+        - com.github.rafostar.Clapper
+        - com.github.tchx84.Flatseal
         - com.mattjakeman.ExtensionManager
+        - com.transmissionbt.Transmission
+        - de.haeckerfelix.Shortwave
+        - de.schmidhuberj.DieBahn
+        - fr.romainvigier.MetadataCleaner
+        - io.anytype.anytype
         - io.github.flattool.Warehouse
+        - io.gitlab.librewolf-community
         - io.missioncenter.MissionCenter
+        - org.gimp.GIMP
+        - org.gnome.Fractal
+        - org.inkscape.Inkscape
+        - org.openstreetmap.josm
         - org.signal.Signal
         - re.sonny.Tangram
-        - org.gnome.Fractal
-        - io.gitlab.librewolf-community
-        - io.anytype.anytype
-        - app.drey.Dialect
-        - com.github.tchx84.Flatseal
-        - com.github.johnfactotum.Foliate
-        - de.schmidhuberj.DieBahn
-        - de.haeckerfelix.Shortwave
-        - org.gimp.GIMP
-        - fr.romainvigier.MetadataCleaner
-        - com.belmoussaoui.Decoder
-        - org.openstreetmap.josm
-        - app.drey.Warp
-        - org.inkscape.Inkscape
-        - com.github.rafostar.Clapper
-        - com.transmissionbt.Transmission
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
       # Installing different branches of the same Flatpak is not supported.
