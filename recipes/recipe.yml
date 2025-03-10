@@ -166,6 +166,7 @@ modules:
         - io.github.flattool.Warehouse
         - io.gitlab.librewolf-community
         - io.missioncenter.MissionCenter
+        - io.podman_desktop.PodmanDesktop
         - org.gimp.GIMP
         - org.gnome.Fractal
         - org.inkscape.Inkscape
