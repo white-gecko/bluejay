@@ -141,6 +141,7 @@ modules:
       - gnome-shell-extension-dash-to-dock
       # maybe fixes iso, cf. https://github.com/JasonN3/build-container-installer/issues/150#issuecomment-2746366284
       - just
+      - ublue-os-just
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
