@@ -23,7 +23,7 @@ modules:
       - font-manager
       #- mjpegtools-libs # <- in RPM Fusion but I'm unsure, why I needed this
       # external
-      #- https://github.com/pulsar-edit/pulsar/releases/download/v1.126.0/Linux.pulsar-1.126.0.x86_64.rpm # see optfix and script below
+      - https://github.com/pulsar-edit/pulsar/releases/download/v1.126.0/Linux.pulsar-1.126.0.x86_64.rpm # see optfix and script below
       - https://github.com/go-task/task/releases/download/v3.42.0/task_linux_amd64.rpm
       # foundation
       - eza # alternative to ls
@@ -139,9 +139,6 @@ modules:
       - docker-ce-rootless-extras
       - gnome-shell-extension-logo-menu
       - gnome-shell-extension-dash-to-dock
-      # maybe fixes iso, cf. https://github.com/JasonN3/build-container-installer/issues/150#issuecomment-2746366284
-      - just
-      - ublue-os-just
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -211,5 +208,6 @@ modules:
       - fix-pulsar.sh
       - disable-nano.sh
       - default-browser.sh
+      - fix-non-ascii-ostree.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
