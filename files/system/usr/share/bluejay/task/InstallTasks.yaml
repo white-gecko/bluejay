@@ -36,6 +36,7 @@ tasks:
     cmds:
       - |
         ppm install language-vue
+        ppm install language-rdf
 
   yarn:
     aliases: ["corepack"]
