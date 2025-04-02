@@ -1,0 +1,208 @@
+# image will be published to ghcr.io/<user>/<name>
+name: bluejay-no-pulsar
+# description will be included in the image's metadata
+description: Where I live we have Eurasian jays and I like them. But the name bluejay sounds better and I also have a cap from those in Toronto, even though I know nothing about baseball. But this is my personal OS image ;-)
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/aflyhorse/libjpeg/repo/fedora-%OS_VERSION%/aflyhorse-libjpeg-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-%OS_VERSION%/jerrycasiano-FontManager-fedora-%OS_VERSION%.repo
+    install:
+      # from corp repos
+      - starship
+      - font-manager
+      #- mjpegtools-libs # <- in RPM Fusion but I'm unsure, why I needed this
+      # external
+      - https://github.com/go-task/task/releases/download/v3.42.1/task_linux_amd64.rpm
+      # foundation
+      - eza # alternative to ls
+      - neovim
+      - gnome-text-editor
+      - syncthing
+      - rsync
+      - restic
+      - pwgen
+      - htop
+      - ack
+      - git
+      - git-credential-libsecret
+      - curl
+      - moreutils
+      - dos2unix
+      - xclip
+      - gnome-font-viewer
+      # development
+      - gnome-boxes
+      - sqlitebrowser
+      - sqlite
+      - java-latest-openjdk
+      - maven
+      - ghex
+      - nodejs-npm
+      - optipng
+      - jpegoptim
+      - exiv2
+      - entr
+      - openssl
+      - cmake
+      - gcc-c++
+      - podman-docker
+      - ansible
+      - ansible-collection-ansible-posix
+      - ansible-collection-community-docker
+      - ansible-packaging
+      - android-tools
+      - gitg
+      - tig
+      - gnuplot
+      - distrobox
+      - pipx
+      - python3-pip
+      - python3-virtualenvwrapper
+      # development for pywb
+      - python3.11
+      - python3-cairo-devel
+      # desktop
+      - tmux
+      - keepassxc
+      - firefox
+      - thunderbird
+      - chromium
+      - libreoffice
+      - langpacks-de
+      - langpacks-en
+      - qgis
+      - qcad
+      - simple-scan
+      - ocrmypdf
+      - tesseract-langpack-deu
+      - tesseract-osd
+      - qrencode
+      - hedgewars
+      - hunspell-de
+      - hunspell-en
+      - moon-buggy
+      - musescore
+      - file-roller-nautilus
+      - cheese
+      - calls
+      - baobab
+      - evince
+      - evince-djvu
+      - eog
+      - eog-plugins
+      - diffpdf
+      - xournal
+      - pdftk-java
+      - calibre
+      - gpsbabel
+      - yubikey-manager
+      - qflipper
+      - yt-dlp
+      - remmina-plugins-exec
+      - remmina-plugins-rdp
+      - remmina-plugins-secret
+      - remmina-plugins-vnc
+      #- mozilla-openh264
+      # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
+      - cups-pdf
+      # system
+      - NetworkManager-openconnect-gnome
+      - NetworkManager-openvpn-gnome
+      - NetworkManager-ssh-gnome
+      - NetworkManager-vpnc-gnome
+      # gnome setup
+      - gnome-tweaks
+      - gnome-shell-extension-caffeine
+      - gnome-shell-extension-user-theme
+      - gnome-remote-desktop
+      - gnome-browser-connector
+      # fonts
+      - open-sans-fonts
+    remove:
+      # conflicts with podman-docker
+      - docker-ce
+      - docker-ce-cli
+      - docker-buildx-plugin
+      - docker-compose-plugin
+      - docker-ce-rootless-extras
+      - gnome-shell-extension-logo-menu
+      - gnome-shell-extension-dash-to-dock
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      # repo-name: flathub
+      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      install:
+        # - org.mozilla.firefox
+        # - org.gnome.Loupe
+        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+        - app.drey.Dialect
+        - app.drey.Warp
+        - com.belmoussaoui.Decoder
+        - com.github.johnfactotum.Foliate
+        - com.github.rafostar.Clapper
+        - com.github.tchx84.Flatseal
+        - com.mattjakeman.ExtensionManager
+        - com.transmissionbt.Transmission
+        - de.haeckerfelix.Shortwave
+        - de.schmidhuberj.DieBahn
+        - fr.romainvigier.MetadataCleaner
+        - io.anytype.anytype
+        - io.github.flattool.Warehouse
+        - io.gitlab.librewolf-community
+        - io.missioncenter.MissionCenter
+        - io.podman_desktop.PodmanDesktop
+        - org.gimp.GIMP
+        - org.gnome.Fractal
+        - org.inkscape.Inkscape
+        - org.openstreetmap.josm
+        - org.signal.Signal
+        - re.sonny.Tangram
+      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
+      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
+      # Installing different branches of the same Flatpak is not supported.
+      #remove:
+      # - org.gnome.eog
+
+  - type: gnome-extensions
+    install:
+      - Quake Terminal
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: gschema-overrides
+    include:
+      - zz1-bluejay.gschema.override
+
+  - type: systemd
+    user:
+      enabled:
+        - syncthing.service
+
+  - type: script
+    scripts:
+      - install-quarto.sh
+      - disable-nano.sh
+      - default-browser.sh
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
