@@ -84,7 +84,6 @@ modules:
       - langpacks-en
       - qgis
       - qcad
-      - simple-scan
       - ocrmypdf
       - tesseract-langpack-deu
       - tesseract-osd
@@ -123,7 +122,6 @@ modules:
       - NetworkManager-ssh-gnome
       - NetworkManager-vpnc-gnome
       # gnome setup
-      - gnome-tweaks
       - gnome-shell-extension-caffeine
       - gnome-shell-extension-user-theme
       - gnome-remote-desktop

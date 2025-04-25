@@ -17,7 +17,8 @@ tasks:
           ncspot \
           minikube \
           kubernetes-cli \
-          openshift-cli
+          openshift-cli \
+          topgrade
 
   upkgs:pipx:
     desc: Install pipx packages
