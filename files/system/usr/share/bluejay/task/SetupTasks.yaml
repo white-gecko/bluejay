@@ -48,3 +48,18 @@ tasks:
       This might breakt at some time: https://github.com/OpenPrinting/cups-sharing/issues/4"
     cmds:
       - lpadmin -p Cups-PDF -D "Print to a PDF file" -v cups-pdf:/ -m CUPS-PDF_noopt.ppd -E
+
+  languagetool:
+    desc: Setup languagetool and fasttext
+    summary: |
+      asd
+    cmds:
+      - task: fasttext
+      - |
+        echo "fasttextModel=/home/linuxbrew/.linuxbrew/opt/fasttext/models/lid.176.bin" >> /var/home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
+        echo "fasttextBinary=/home/linuxbrew/.linuxbrew/bin/fasttext" >> /var/home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
+
+  fasttext:
+    desc: Download the model
+    cmds:
+      - curl -L -o /home/linuxbrew/.linuxbrew/opt/fasttext/models https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin

@@ -18,6 +18,8 @@ tasks:
           minikube \
           kubernetes-cli \
           openshift-cli \
+          languagetool \
+          fasttext \
           topgrade
 
   upkgs:pipx:
