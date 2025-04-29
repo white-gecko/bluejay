@@ -52,7 +52,7 @@ tasks:
   languagetool:
     desc: Setup languagetool and fasttext
     summary: |
-      asd
+      Get the fasttext model and configure languagetool to use the fasttext model and binary
     cmds:
       - task: fasttext
       - |
