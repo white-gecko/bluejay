@@ -28,7 +28,7 @@ tasks:
       - echo "TODO"
 
   syncthing:
-    desc: Setup the shared directoreis with syncthing for the user, enable syncthing, maybe
+    desc: Setup the shared directories with syncthing for the user, enable syncthing, maybe
     cmds:
       - echo "TODO"
 
