@@ -127,15 +127,6 @@ modules:
       - gnome-browser-connector
       # fonts
       - open-sans-fonts
-    remove:
-      # conflicts with podman-docker
-      - docker-ce
-      - docker-ce-cli
-      - docker-buildx-plugin
-      - docker-compose-plugin
-      - docker-ce-rootless-extras
-      - gnome-shell-extension-logo-menu
-      - gnome-shell-extension-dash-to-dock
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
