@@ -23,7 +23,7 @@ modules:
       # external
       - https://github.com/go-task/task/releases/download/v3.42.1/task_linux_amd64.rpm
       # foundation
-      - eza # alternative to ls
+      #- eza # alternative to ls
       - neovim
       - gnome-text-editor
       - syncthing
