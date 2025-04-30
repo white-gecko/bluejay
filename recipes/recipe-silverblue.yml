@@ -95,8 +95,6 @@ modules:
       - cheese
       - calls
       - baobab
-      - evince
-      - evince-djvu
       - eog
       - eog-plugins
       - diffpdf
