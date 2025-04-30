@@ -1,0 +1,17 @@
+# image will be published to ghcr.io/<user>/<name>
+name: bluejay-silver
+# description will be included in the image's metadata
+description: Where I live we have Eurasian jays and I like them. But the name bluejay sounds better and I also have a cap from those in Toronto, even though I know nothing about baseball. But this is my personal OS image ;-)
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: packages-common.yaml
+  - from-file: packages-pulsar.yaml
+  - from-file: flatpaks.yaml
+  - from-file: common.yaml
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

@@ -1,0 +1,6 @@
+type: rpm-ostree
+optfix:
+  - Pulsar
+install:
+  # external
+  - https://github.com/pulsar-edit/pulsar/releases/download/v1.127.1/Linux.pulsar-1.127.1.x86_64.rpm # see optfix and script below

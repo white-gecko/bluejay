@@ -1,0 +1,10 @@
+type: rpm-ostree
+remove:
+  # conflicts with podman-docker
+  - docker-ce
+  - docker-ce-cli
+  - docker-buildx-plugin
+  - docker-compose-plugin
+  - docker-ce-rootless-extras
+  - gnome-shell-extension-logo-menu
+  - gnome-shell-extension-dash-to-dock
