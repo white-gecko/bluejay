@@ -77,22 +77,3 @@ tasks:
         # type	path		mode	UID 	GID 	Age		Argument
         L	%t/kpxc_server	-	-	-	-		%t/app/org.keepassxc.KeePassXC/org.keepassxc.KeePassXC.BrowserServer
         " > {{.USER_TMP}}/kpxc_server.conf
-
-  grub-double-entry:
-    desc: Fix double entry of linux in the bootloader
-    summary: |
-      Currently the linux bootentries are shown redundantly, this fix is taken from:
-      https://github.com/sukarn-m/sukarn-ublue/blob/2b31e686be8e1cd1244bc086266b18e507fe5802/files/system/usr/share/ublue-os/just/60-custom.just#L29-L40
-      See also: https://fedoraproject.org/wiki/Changes/BootLoaderSpecByDefault
-    cmds:
-      - |
-        if [ -d /sys/firmware/efi ]; then
-          sudo grub2-switch-to-blscfg
-          sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-          sudo cp /boot/grub2/grubenv /boot/efi/EFI/fedora/grubenv
-        else
-          block_device=$(lsblk -spnlo name $(grub2-probe --target=device /boot/grub2) | tail -n1)
-          sudo grub2-install $block_device
-          sudo touch /boot/grub2/.grub2-blscfg-supported
-          sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-        fi
