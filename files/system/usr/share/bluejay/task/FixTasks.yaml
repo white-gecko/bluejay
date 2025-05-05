@@ -10,21 +10,38 @@ tasks:
       - sudo systemctl enable systemd-timesyncd
       - sudo systemctl start systemd-timesyncd
 
-  keepassxc-librewolf:
-    desc: Fix KeepassXC to work with LibreWolf
+  keepassxc:
+    desc: Fix KeepassXC to work with LibreWolf and Firefox
     summary: |
-      Fix KeepassXC to work with Firefox/LibreWolf if both run in a flatpak. Following the instructions of:
+      Fix KeepassXC to work with Firefox/LibreWolf if both (keepass and the fox/wolf) run in a flatpak. Following the instructions of:
       https://discourse.flathub.org/t/how-to-run-firefox-and-keepassxc-in-a-flatpak-and-get-the-keepassxc-browser-add-on-to-work/437
       - Configure to start the keepassxc proxy
       - Allow access for the fox to the socket
       - Expose the socket
       The last two steps don't appear to be required in the current setup to work.
     cmds:
-      - task: keepassxc-librewolf:start-keepassxc-proxy
+      - task: keepassxc-librewolf
+      - task: keepassxc-firefox
+
+  keepassxc-librewolf:
+    desc: Fix KeepassXC to work with LibreWolf
+    cmds:
+      - task: keepassxc-canid:start-keepassxc-proxy
+        vars:
+          CANID: io.gitlab.librewolf-community
+          DOT_CANID: .librewolf
       - #task: keepassxc-librewolf:allow-access
       - #task: keepassxc-librewolf:expose-socket
 
-  keepassxc-librewolf:start-keepassxc-proxy:
+  keepassxc-firefox:
+    desc: Fix KeepassXC to work with LibreWolf
+    cmds:
+      - task: keepassxc-canid:start-keepassxc-proxy
+        vars:
+          CANID: org.mozilla.firefox
+          DOT_CANID: .mozilla
+
+  keepassxc-canid:start-keepassxc-proxy:
     desc: Setup the proxy initialization.
     summary: |
       Configure the wolf/fox/dog you are using with the CANID variable.
@@ -33,26 +50,29 @@ tasks:
       Firefox: `org.mozilla.firefox` uses `.mozilla`
       LibreWolf: `io.gitlab.librewolf-community` uses `.librewolf`
     vars:
-      CANID: io.gitlab.librewolf-community
-      DOT_CANID: .librewolf
-      NATIVE_MESSAGING_HOSTS: "{{.HOME}}/.var/app/{{.CANID}}/{{.DOT_CANID}}/native-messaging-hosts"
+      CANID: '{{.CANID | default "io.gitlab.librewolf-community" }}'
+      DOT_CANID: '{{.DOT_CANID | default ".librewolf" }}'
     cmds:
-      - mkdir -p {{.NATIVE_MESSAGING_HOSTS}}
-      - curl -L -o {{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy https://github.com/white-gecko/keepassxc-proxy-rust/releases/download/nightly-tag-2024-12-05/keepassxc-proxy
-      - chmod +x {{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy
       - |
+        NATIVE_MESSAGING_HOSTS="{{.HOME}}/.var/app/{{.CANID}}/{{.DOT_CANID}}/native-messaging-hosts"
+
+        mkdir -p ${NATIVE_MESSAGING_HOSTS}
+        curl -L -o ${NATIVE_MESSAGING_HOSTS}/keepassxc-proxy https://github.com/white-gecko/keepassxc-proxy-rust/releases/download/nightly-tag-2024-12-05/keepassxc-proxy
+        chmod +x ${NATIVE_MESSAGING_HOSTS}/keepassxc-proxy
         echo '{
             "allowed_extensions": [
                 "keepassxc-browser@keepassxc.org"
             ],
             "description": "KeePassXC integration with native messaging support, workaround for flatpaked Firefox, LibreWolf, or one of the dogs, see https://is.gd/flatpakFirefoxKPXC",
             "name": "org.keepassxc.keepassxc_browser",
-            "path": "{{.NATIVE_MESSAGING_HOSTS}}/keepassxc-proxy",
+            "path": "${NATIVE_MESSAGING_HOSTS}/keepassxc-proxy",
             "type": "stdio"
-        }' > {{.NATIVE_MESSAGING_HOSTS}}/org.keepassxc.keepassxc_browser.json
+        }' > ${NATIVE_MESSAGING_HOSTS}/org.keepassxc.keepassxc_browser.json
 
   keepassxc-librewolf:allow-access:
     desc: Allowing Firefox to access the socket
+    summary: |
+      This is currently unused and appears to work without it
     vars:
       CANID: io.gitlab.librewolf-community
     cmds:
@@ -60,6 +80,8 @@ tasks:
 
   keepassxc-librewolf:expose-socket:
     desc: Exposing the UNIX socket from the KeePassXC flatpak, if KeepassXC is running in a flatpak
+    summary: |
+      This is currently unused and appears to work without it
     vars:
       USER_TMP: "{{.HOME}}/.local/share/user-tmpfiles.d"
     cmds:
