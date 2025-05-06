@@ -30,7 +30,9 @@ tasks:
         vars:
           CANID: io.gitlab.librewolf-community
           DOT_CANID: .librewolf
-      - #task: keepassxc-librewolf:allow-access
+      - task: keepassxc-librewolf:allow-access
+        vars:
+          CANID: io.gitlab.librewolf-community
       - #task: keepassxc-librewolf:expose-socket
 
   keepassxc-firefox:
@@ -40,6 +42,9 @@ tasks:
         vars:
           CANID: org.mozilla.firefox
           DOT_CANID: .mozilla
+      - task: keepassxc-canid:allow-access
+        vars:
+          CANID: io.gitlab.librewolf-community
 
   keepassxc-canid:start-keepassxc-proxy:
     desc: Setup the proxy initialization.
@@ -69,12 +74,10 @@ tasks:
             "type": "stdio"
         }' > ${NATIVE_MESSAGING_HOSTS}/org.keepassxc.keepassxc_browser.json
 
-  keepassxc-librewolf:allow-access:
+  keepassxc-canid:allow-access:
     desc: Allowing Firefox to access the socket
     summary: |
       This is currently unused and appears to work without it
-    vars:
-      CANID: io.gitlab.librewolf-community
     cmds:
       - sudo flatpak override --filesystem=xdg-run/org.keepassxc.KeePassXC.BrowserServer:ro {{.CANID}}
 
