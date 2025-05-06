@@ -33,7 +33,7 @@ tasks:
       - task: keepassxc-librewolf:allow-access
         vars:
           CANID: io.gitlab.librewolf-community
-      - #task: keepassxc-librewolf:expose-socket
+      - task: keepassxc:expose-socket
 
   keepassxc-firefox:
     desc: Fix KeepassXC to work with LibreWolf
@@ -45,6 +45,7 @@ tasks:
       - task: keepassxc-canid:allow-access
         vars:
           CANID: io.gitlab.librewolf-community
+      - task: keepassxc:expose-socket
 
   keepassxc-canid:start-keepassxc-proxy:
     desc: Setup the proxy initialization.
@@ -76,15 +77,13 @@ tasks:
 
   keepassxc-canid:allow-access:
     desc: Allowing Firefox to access the socket
-    summary: |
-      This is currently unused and appears to work without it
     cmds:
       - sudo flatpak override --filesystem=xdg-run/org.keepassxc.KeePassXC.BrowserServer:ro {{.CANID}}
 
-  keepassxc-librewolf:expose-socket:
-    desc: Exposing the UNIX socket from the KeePassXC flatpak, if KeepassXC is running in a flatpak
+  keepassxc:expose-socket:
+    desc: Expose the UNIX socket from the KeePassXC flatpak
     summary: |
-      This is currently unused and appears to work without it
+      Expose the UNIX socket from the KeePassXC flatpak to the runtime directory (XDG_RUNTIME_DIR, e.g./run/user/1000), if KeepassXC is running in a flatpak.
     vars:
       USER_TMP: "{{.HOME}}/.local/share/user-tmpfiles.d"
     cmds:
