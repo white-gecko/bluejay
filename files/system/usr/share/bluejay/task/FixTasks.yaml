@@ -30,10 +30,10 @@ tasks:
         vars:
           CANID: io.gitlab.librewolf-community
           DOT_CANID: .librewolf
-      - task: keepassxc-librewolf:allow-access
-        vars:
-          CANID: io.gitlab.librewolf-community
-      - task: keepassxc:expose-socket
+      - #task: keepassxc-librewolf:allow-access
+        #vars:
+        #  CANID: io.gitlab.librewolf-community
+      - #task: keepassxc:expose-socket
 
   keepassxc-firefox:
     desc: Fix KeepassXC to work with LibreWolf
@@ -42,10 +42,10 @@ tasks:
         vars:
           CANID: org.mozilla.firefox
           DOT_CANID: .mozilla
-      - task: keepassxc-canid:allow-access
-        vars:
-          CANID: io.gitlab.librewolf-community
-      - task: keepassxc:expose-socket
+      - #task: keepassxc-canid:allow-access
+        #vars:
+        #  CANID: io.gitlab.librewolf-community
+      - #task: keepassxc:expose-socket
 
   keepassxc-canid:start-keepassxc-proxy:
     desc: Setup the proxy initialization.
