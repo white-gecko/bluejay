@@ -71,7 +71,7 @@ tasks:
             ],
             "description": "KeePassXC integration with native messaging support, workaround for flatpaked Firefox, LibreWolf, or one of the dogs, see https://is.gd/flatpakFirefoxKPXC",
             "name": "org.keepassxc.keepassxc_browser",
-            "path": "${NATIVE_MESSAGING_HOSTS}/keepassxc-proxy",
+            "path": "'${NATIVE_MESSAGING_HOSTS}'/keepassxc-proxy",
             "type": "stdio"
         }' > ${NATIVE_MESSAGING_HOSTS}/org.keepassxc.keepassxc_browser.json
 
