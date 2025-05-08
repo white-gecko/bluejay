@@ -47,6 +47,8 @@ install:
   - ansible-packaging
   - android-tools
   - rustup
+  - rust
+  - cargo
   - gitg
   - tig
   - gnuplot
