@@ -47,6 +47,7 @@ install:
   - ansible-collection-community-docker
   - ansible-packaging
   - android-tools
+  - rustup
   - gitg
   - tig
   - gnuplot
