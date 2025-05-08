@@ -27,7 +27,6 @@ install:
   - xclip
   - gnome-font-viewer
   # development
-  - gnome-boxes
   - sqlitebrowser
   - sqlite
   - java-latest-openjdk
