@@ -66,6 +66,7 @@ install:
   - langpacks-de
   - langpacks-en
   - qgis
+  - gpsbabel
   - qcad
   - ocrmypdf
   - tesseract-langpack-deu
@@ -86,7 +87,6 @@ install:
   - xournal
   - pdftk-java
   - calibre
-  - gpsbabel
   - yubikey-manager
   - qflipper
   - yt-dlp
