@@ -51,7 +51,6 @@ install:
   - gitg
   - tig
   - gnuplot
-  - distrobox
   - pipx
   - python3-pip
   - python3-virtualenvwrapper
