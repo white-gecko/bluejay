@@ -9,7 +9,7 @@ install:
   - font-manager
   #- mjpegtools-libs # <- in RPM Fusion but I'm unsure, why I needed this
   # external
-  - https://github.com/go-task/task/releases/download/v3.42.1/task_linux_amd64.rpm
+  - https://github.com/go-task/task/releases/download/v3.43.3/task_linux_amd64.rpm
   # foundation
   - neovim
   - gnome-text-editor
