@@ -4,6 +4,37 @@ includes:
   syncthing: SetupSyncthingTasks.yaml
 
 tasks:
+  default:
+    desc: Setup secrets, connections, shared folders, dotfiles, printers, and more
+    summary: |
+      The kee-config env should as minimum set the variables
+      - SYNCTHING_REMOTE_ADDRESS
+      - SYNCTHING_REMOTE_APIKEY
+      - SYNCTHING_FOLDER_IDS < should be set interactively
+      - INIT_CHEZMOI_REPOSITORY
+    prompt: Make sure the INIT_KEEPASS_FILE, INIT_KEEPASS_PASSWORD and if reqired INIT_KEEPASS_KEY_FILE are set
+    vars:
+      INIT_JSON:
+        sh: kee-config --env --json -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
+      INIT:
+        ref: "fromJson .INIT_JSON"
+    cmds:
+      - task: secrets
+      - task: connections
+      - task: syncthing
+        vars:
+          SYNCTHING_REMOTE_ADDRESS:
+            ref: .INIT.SYNCTHING_REMOTE_ADDRESS
+          SYNCTHING_REMOTE_APIKEY:
+            ref: .INIT.SYNCTHING_REMOTE_APIKEY
+      - task: chezmoi
+        vars:
+          CHEZMOI_REPOSITORY:
+            ref: .INIT.CHEZMOI_REPOSITORY
+      - task: printers
+      - task: user-tasks
+      - task: languagetool
+
   user-tasks:
     desc: Create a user Taskfile for custom tasks.
     env:
@@ -14,30 +45,29 @@ tasks:
       - "echo \"version: '3'\n\ntasks:\n  welcome:\n    desc: Your welcome task.\n    cmds:\n      - echo \\\"Hello bluejay\\\"\" > $USER_TASK"
       - echo "Your new Taskfile is at '$USER_TASK'"
 
-  printers:
-    desc: Install all printers
-    cmds:
-      - task: printers:cups-pdf
-
   secrets:
     desc: Install all user keys
     summary: |
       Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
     cmds:
-      - |
-        kee-config --write -f {{.INIT_KEEPASS_FILE}}
+      - kee-config --write -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   connections:
     desc: Configure the users wifis from keepass
     aliases: ["wifis"]
     interactive: true
     cmds:
-      - sudo kee-config --write --connections -f {{.INIT_KEEPASS_FILE}}
+      - sudo kee-config --write --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   chezmoi:
     desc: Initialize the chezmoi repository
     cmds:
-      - chezmoi init --apply {{.INIT_CHEZMOI_REPOSITORY}}
+      - chezmoi init --apply {{.CHEZMOI_REPOSITORY}}
+
+  printers:
+    desc: Install all printers
+    cmds:
+      - task: printers:cups-pdf
 
   printers:cups-pdf:
     desc: Add the cups-pdf printer

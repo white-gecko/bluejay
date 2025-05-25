@@ -17,27 +17,3 @@ tasks:
     aliases: ["help"]
     cmds:
       - utask -l
-
-  install-everything:
-    cmds:
-      - task: install:upkgs
-
-  setup-everything:
-    prompt: Make sure the INIT_KEEPASS_PASSWORD and INIT_KEEPASS_FILE are set
-    vars:
-      INIT_JSON:
-        sh: kee-config --env --json -f "{{.INIT_KEEPASS_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
-      INIT:
-        ref: "fromJson .INIT_JSON"
-    cmds:
-      - task: setup:secrets
-      - task: setup:connections
-      - task: setup:syncthing
-        vars:
-          SYNCTHING_REMOTE_ADDRESS:
-            ref: .INIT.SYNCTHING_REMOTE_ADDRESS
-          SYNCTHING_REMOTE_APIKEY:
-            ref: .INIT.SYNCTHING_REMOTE_APIKEY
-      - task: setup:chezmoi
-      - task: setup:printers
-      - task: setup:languagetool

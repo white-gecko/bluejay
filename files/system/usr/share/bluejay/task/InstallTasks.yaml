@@ -1,6 +1,11 @@
 version: '3'
 
 tasks:
+  default:
+    desc: Install all packages
+    cmds:
+      - task: install:upkgs
+
   upkgs:
     aliases: ["user-packages"]
     desc: Install userspace packages
