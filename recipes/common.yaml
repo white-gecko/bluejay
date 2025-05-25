@@ -22,6 +22,11 @@ modules:
       enabled:
         - syncthing.service
 
+  - type: chezmoi
+    disable-init: true
+    disable-update: true
+    all-users: false
+
   - type: script
     scripts:
       - install-quarto.sh
