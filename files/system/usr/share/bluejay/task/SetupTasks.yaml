@@ -1,5 +1,8 @@
 version: '3'
 
+includes:
+  syncthing: SetupSyncthingTasks.yaml
+
 tasks:
   user-tasks:
     desc: Create a user Taskfile for custom tasks.
@@ -16,31 +19,25 @@ tasks:
     cmds:
       - task: printers:cups-pdf
 
-  keys:
+  secrets:
     desc: Install all user keys
+    summary: |
+      Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
     cmds:
-      - task: keys:gpg
-      - task: keys:ssh
+      - |
+        kee-config --write -f {{.INIT_KEEPASS_FILE}}
 
-  wifis:
+  connections:
     desc: Configure the users wifis from keepass
+    aliases: ["wifis"]
+    interactive: true
     cmds:
-      - echo "TODO"
+      - sudo kee-config --write --connections -f {{.INIT_KEEPASS_FILE}}
 
-  syncthing:
-    desc: Setup the shared directories with syncthing for the user, enable syncthing, maybe
+  chezmoi:
+    desc: Initialize the chezmoi repository
     cmds:
-      - echo "TODO"
-
-  keys:ssh:
-    desc: Install the user's SSH keys from keepass
-    cmds:
-      - echo "TODO"
-
-  keys:gpg:
-    desc: Install the user's GPG keys from keepass
-    cmds:
-      - echo "TODO"
+      - chezmoi init --apply {{.INIT_CHEZMOI_REPOSITORY}}
 
   printers:cups-pdf:
     desc: Add the cups-pdf printer

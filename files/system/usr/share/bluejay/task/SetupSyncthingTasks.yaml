@@ -1,0 +1,143 @@
+version: '3'
+
+vars:
+  DEFAULT_FOLDER_PATH: ~/Documents
+  SYNCTHING_LOCAL: syncthing
+  SYNCTHING_REMOTE: syncthing --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}
+
+tasks:
+
+  default:
+    desc: Setup syncthing
+    summary: |
+      Setup the shared directories with syncthing for the current user, enable syncthing, maybe
+
+      SYNCTHING_LOCAL: is the syncthing command to execute, it could be e.g. `syncthing` or e.g. some docker exec command
+      SYNCTHING_REMOTE: is the remote syncthing command to execute, it could be e.g. `ssh remote_host syncthing` or `syncthing --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}`
+      DEFAULT_FOLDER_PATH: set to ~/Documents, is the directory in which the accepted folder are placed
+
+      variables expected:
+      - SYNCTHING_REMOTE_ADDRESS: the hostname and optionally port of the remote syncthing instance
+      - SYNCTHING_REMOTE_APIKEY: the apikey can be obtained with `grep apikey config.xml` from the syncting config
+      - SYNCTHING_FOLDER_IDS: the syncthing ids of the folders to share wih this machine (if you don't know them, run utask syncthing:list-remote-folders first)
+    cmds:
+      - task: activate
+      - task: config
+      - task: shares
+
+  shares:
+    desc: Setup the sharing
+    summary: |
+      Setup the local and remote instances to sahre folders
+
+      This cold also go into default, but wrapps the task calles the need the respective instace IDs, which are only available after the local instance is running
+      variables provided:
+      - SYNCTHING_LOCAL_ID: is the id of the locally runing syncthing instance
+      - SYNCTHING_REMOTE_ID: is the id of the locally runing syncthing instance
+    vars:
+      SYNCTHING_LOCAL_ID:
+        sh: "{{.SYNCTHING_LOCAL}} cli show system | jq -r .myID"
+      SYNCTHING_REMOTE_ID:
+        sh: "{{.SYNCTHING_REMOTE}} cli show system | jq -r .myID"
+    cmds:
+      - task: handshake
+        vars:
+          SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
+      - task: enable-accept
+        vars:
+          SYNCTHING_LOCAL_ID: "{{.SYNCTHING_REMOTE_ID}}"
+      - task: setup-folders
+        vars:
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
+      - task: disable-accept
+        vars:
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
+
+  activate:
+    desc: Activate syncthing to start automatically
+    summary: |
+      See also https://docs.syncthing.net/users/autostart.html#linux
+    interactive: true
+    cmds:
+      - |
+        sudo systemctl enable syncthing@{{.USER}}.service
+        sudo systemctl start syncthing@{{.USER}}.service
+        systemctl --user enable syncthing.service
+        systemctl --user start syncthing.service
+
+  config:
+    desc: Configure syncthing to stay in the local network
+    summary: |
+      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    cmds:
+      - |
+        # accept all folders
+        {{.SYNCTHING_LOCAL}} cli config options natenabled set false
+        {{.SYNCTHING_LOCAL}} cli config options relays-enabled set false
+        {{.SYNCTHING_LOCAL}} cli config options global-ann-enabled set false
+        {{.SYNCTHING_LOCAL}} cli config defaults folder path set {{.DEFAULT_FOLDER_PATH}}
+
+  handshake:
+    desc: Let the instances get to know each other
+    cmds:
+      - "{{.SYNCTHING_LOCAL}} cli config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
+      - "{{.SYNCTHING_REMOTE}} cli config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
+
+  enable-accept:
+    desc: Call the syncthing cli to accept all folder to be shared
+    summary: |
+      don't accept all folders anymore
+      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    cmds:
+      - "{{.SYNCTHING_LOCAL}} cli config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set true"
+
+  disable-accept:
+    desc: Call the syncthing cli to not accept all folder to be shared
+    summary: |
+      don't accept all folders anymore
+      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    cmds:
+      - "{{.SYNCTHING_LOCAL}} cli config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set false"
+
+  list-folders:
+    desc: List folders on a syncthing instance
+    summary: |
+      syncthing cli config dump-json | jq '.folders[] | select(.path == "/home/you/your/path") | .id'
+    cmds:
+      - |
+        for folderID in $( {{.SYNCTHING_CMD}} cli config folders list ); do {{.SYNCTHING_CMD}} cli config folders $folderID dump-json | jq -r '.folders[] | [.id,.label,.path] | @tsv'; done
+
+  list-local-folders:
+    desc: List all local folders
+    cmds:
+      - task: list-folders
+        vars:
+          SYNCTHING_CMD: "{{.SYNCTHING_LOCAL}}"
+
+  list-remote-folders:
+    desc: List all remote folders
+    cmds:
+      - task: list-folders
+        vars:
+          SYNCTHING_CMD: "{{.SYNCTHING_REMOTE}}"
+
+  setup-folders:
+    desc: Setup the folders
+    interactive: true
+    cmds:
+      - for:
+          var: SYNCTHING_FOLDER_IDS
+        task: share-folder
+        vars:
+          SYNCTHING_FOLDER_ID: "{{.ITEM}}"
+      - task: list-local-folders
+
+  share-folder:
+    desc: Share a folder between instances
+    summary: |
+      Share a folder from the remote instance to the local syncthing instances
+      Call the syncthing cli to serve the directories to the client, needs to be run on the serving host
+      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    cmds:
+      - "{{.SYNCTHING_REMOTE}} cli config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
