@@ -80,6 +80,7 @@ tasks:
 
   handshake:
     desc: Let the instances get to know each other
+    silent: true
     cmds:
       - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
       - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
@@ -104,6 +105,7 @@ tasks:
     desc: List folders on a syncthing instance
     summary: |
       syncthing cli config dump-json | jq '.folders[] | select(.path == "/home/you/your/path") | .id'
+    silent: true
     cmds:
       - "{{.SYNCTHING_CMD}} config dump-json | jq -r '.folders[] | [.id,.label,.path] | @tsv'"
 
@@ -138,5 +140,6 @@ tasks:
       Share a folder from the remote instance to the local syncthing instances
       Call the syncthing cli to serve the directories to the client, needs to be run on the serving host
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    silent: true
     cmds:
       - "{{.SYNCTHING_REMOTE}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
