@@ -2,7 +2,7 @@
 
 gum confirm "Install kee-config?" && pipx install git+https://github.com/white-gecko/kee-config
 
-PATH="/var/home/natanael/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 # fish: fish_add_path --path /var/home/natanael/.local/bin
 
 echo "Select the keepass file, starting from root (/) or current dir (.)?"
@@ -20,4 +20,3 @@ export SYNCTHING_FOLDER_IDS=$(gum choose --no-limit $(utask setup:syncthing:list
 
 gum confirm "Run install task?" && utask install
 gum confirm "Run setup task?" &&utask setup
-
