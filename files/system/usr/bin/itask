@@ -19,4 +19,4 @@ utask setup:syncthing:list-remote-folders | gum table -p --columns=ID,Name,Path
 export SYNCTHING_FOLDER_IDS=$(gum choose --no-limit $(utask setup:syncthing:list-remote-folders | cut -d ',' -f 1))
 
 gum confirm "Run install task?" && utask install
-gum confirm "Run setup task?" &&utask setup
+gum confirm "Run setup task?" && utask setup
