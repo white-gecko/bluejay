@@ -4,7 +4,7 @@ tasks:
   default:
     desc: Install all packages
     cmds:
-      - task: install:upkgs
+      - task: upkgs
 
   upkgs:
     aliases: ["user-packages"]
