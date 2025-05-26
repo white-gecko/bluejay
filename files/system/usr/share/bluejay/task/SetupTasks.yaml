@@ -59,7 +59,7 @@ tasks:
     interactive: true
     silent: true
     cmds:
-      - sudo kee-config --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
+      - sudo $(which kee-config) --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   chezmoi:
     desc: Initialize the chezmoi repository
