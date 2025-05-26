@@ -107,7 +107,7 @@ tasks:
       syncthing cli config dump-json | jq '.folders[] | select(.path == "/home/you/your/path") | .id'
     silent: true
     cmds:
-      - "{{.SYNCTHING_CMD}} config dump-json | jq -r '.folders[] | [.id,.label,.path] | @tsv'"
+      - "{{.SYNCTHING_CMD}} config dump-json | jq -r '.folders[] | [.id,.label,.path] | @csv'"
 
   list-local-folders:
     desc: List all local folders
