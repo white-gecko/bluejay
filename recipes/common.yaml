@@ -26,6 +26,7 @@ modules:
     disable-init: true
     disable-update: true
     all-users: false
+    repository: git@github.com:white-gecko/dotfiles.git
 
   - type: script
     scripts:
