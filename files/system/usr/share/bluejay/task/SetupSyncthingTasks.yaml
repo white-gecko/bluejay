@@ -46,10 +46,10 @@ tasks:
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
       - task: enable-accept
         vars:
-          SYNCTHING_LOCAL_ID: "{{.SYNCTHING_REMOTE_ID}}"
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
       - task: setup-folders
         vars:
-          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
+          SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
       - task: disable-accept
         vars:
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
@@ -132,6 +132,7 @@ tasks:
         task: share-folder
         vars:
           SYNCTHING_FOLDER_ID: "{{.ITEM}}"
+          SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
       - task: list-local-folders
 
   share-folder:
