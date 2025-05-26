@@ -5,6 +5,11 @@ tasks:
     desc: Initialize the whole system
     cmds:
       - |
+        gum style \
+          --border-foreground 57 --border double \
+          --align center --width 50 --margin "1 2" --padding "2 4" \
+          'Welcome to the' 'Bluejay system' '' 'Start the initialization …'
+
         gum confirm "Rebase to signed?" && utask init:rebase-signed
         gum confirm "Install kee-config?" && pipx install git+https://github.com/white-gecko/kee-config
 
