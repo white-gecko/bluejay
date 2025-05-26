@@ -17,3 +17,8 @@ tasks:
     aliases: ["help"]
     cmds:
       - utask -l
+
+  rebase-signed:
+    desc: Rebase to the default and ostree-image-signed version
+    cmds:
+      - rpm-ostree rebase ostree-image-signed:docker://ghcr.io/white-gecko/bluejay:latest
