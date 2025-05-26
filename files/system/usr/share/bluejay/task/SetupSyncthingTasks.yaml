@@ -2,8 +2,8 @@ version: '3'
 
 vars:
   DEFAULT_FOLDER_PATH: ~/Documents
-  SYNCTHING_LOCAL: syncthing
-  SYNCTHING_REMOTE: syncthing --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}
+  SYNCTHING_LOCAL: syncthing cli
+  SYNCTHING_REMOTE: syncthing cli --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}
 
 tasks:
 
@@ -36,9 +36,9 @@ tasks:
       - SYNCTHING_REMOTE_ID: is the id of the locally runing syncthing instance
     vars:
       SYNCTHING_LOCAL_ID:
-        sh: "{{.SYNCTHING_LOCAL}} cli show system | jq -r .myID"
+        sh: "{{.SYNCTHING_LOCAL}} show system | jq -r .myID"
       SYNCTHING_REMOTE_ID:
-        sh: "{{.SYNCTHING_REMOTE}} cli show system | jq -r .myID"
+        sh: "{{.SYNCTHING_REMOTE}} show system | jq -r .myID"
     cmds:
       - task: handshake
         vars:
@@ -73,16 +73,16 @@ tasks:
     cmds:
       - |
         # accept all folders
-        {{.SYNCTHING_LOCAL}} cli config options natenabled set false
-        {{.SYNCTHING_LOCAL}} cli config options relays-enabled set false
-        {{.SYNCTHING_LOCAL}} cli config options global-ann-enabled set false
-        {{.SYNCTHING_LOCAL}} cli config defaults folder path set {{.DEFAULT_FOLDER_PATH}}
+        {{.SYNCTHING_LOCAL}} config options natenabled set false
+        {{.SYNCTHING_LOCAL}} config options relays-enabled set false
+        {{.SYNCTHING_LOCAL}} config options global-ann-enabled set false
+        {{.SYNCTHING_LOCAL}} config defaults folder path set {{.DEFAULT_FOLDER_PATH}}
 
   handshake:
     desc: Let the instances get to know each other
     cmds:
-      - "{{.SYNCTHING_LOCAL}} cli config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
-      - "{{.SYNCTHING_REMOTE}} cli config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
+      - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
+      - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
 
   enable-accept:
     desc: Call the syncthing cli to accept all folder to be shared
@@ -90,7 +90,7 @@ tasks:
       don't accept all folders anymore
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
-      - "{{.SYNCTHING_LOCAL}} cli config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set true"
+      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set true"
 
   disable-accept:
     desc: Call the syncthing cli to not accept all folder to be shared
@@ -98,7 +98,7 @@ tasks:
       don't accept all folders anymore
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
-      - "{{.SYNCTHING_LOCAL}} cli config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set false"
+      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set false"
 
   list-folders:
     desc: List folders on a syncthing instance
@@ -106,7 +106,7 @@ tasks:
       syncthing cli config dump-json | jq '.folders[] | select(.path == "/home/you/your/path") | .id'
     cmds:
       - |
-        for folderID in $( {{.SYNCTHING_CMD}} cli config folders list ); do {{.SYNCTHING_CMD}} cli config folders $folderID dump-json | jq -r '.folders[] | [.id,.label,.path] | @tsv'; done
+        for folderID in $( {{.SYNCTHING_CMD}} config folders list ); do {{.SYNCTHING_CMD}} config folders $folderID dump-json | jq -r '.folders[] | [.id,.label,.path] | @tsv'; done
 
   list-local-folders:
     desc: List all local folders
@@ -140,4 +140,4 @@ tasks:
       Call the syncthing cli to serve the directories to the client, needs to be run on the serving host
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
-      - "{{.SYNCTHING_REMOTE}} cli config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
+      - "{{.SYNCTHING_REMOTE}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
