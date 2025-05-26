@@ -67,6 +67,8 @@ install:
   - libreoffice
   - langpacks-de
   - langpacks-en
+  - hunspell-de
+  - hunspell-en
   - qgis
   - gpsbabel
   - qcad
@@ -75,8 +77,6 @@ install:
   - tesseract-osd
   - qrencode
   - hedgewars
-  - hunspell-de
-  - hunspell-en
   - moon-buggy
   - musescore
   - file-roller-nautilus
