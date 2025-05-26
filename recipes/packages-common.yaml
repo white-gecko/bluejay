@@ -56,8 +56,8 @@ install:
   - python3-pip
   - python3-virtualenvwrapper
   # development for pywb
-  - python3.11
-  - python3-cairo-devel
+  #- python3.11
+  #- python3-cairo-devel
   # desktop
   - tmux
   - keepassxc
