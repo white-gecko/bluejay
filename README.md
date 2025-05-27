@@ -60,11 +60,17 @@ cosign verify --key cosign.pub ghcr.io/white-gecko/bluejay
 
 There is the `utask` command, just like `ujust`, but with [task](https://taskfile.dev/).
 
-### Configure the powerlevel10k prompt
+To setup and init the whoel system run:
+
+You have to prepare some stock or directory, that you have to make available to the init process, that contains your kee-config usable keepass file.
 
 ```
-utask setup:p10k
+utask init
 ```
+
+### Test in virt-manager qemu
+
+To provide the init bundle/the key file, mount it according to https://de.linux-terminal.com/?p=7672
 
 ### Use LaTeX
 
