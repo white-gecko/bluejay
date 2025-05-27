@@ -44,14 +44,16 @@ tasks:
         vars:
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
-      - task: enable-accept
+      - task: auto-accept-folders
         vars:
+          SYNCTHING_ACCEPT_FOLDERS: "true"
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
       - task: setup-folders
         vars:
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
-      - task: disable-accept
+      - task: auto-accept-folders
         vars:
+          SYNCTHING_ACCEPT_FOLDERS: "false"
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
 
   activate:
@@ -87,21 +89,14 @@ tasks:
       - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
       - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
 
-  enable-accept:
-    desc: Call the syncthing cli to accept all folder to be shared
+  auto-accept-folders:
+    desc: Call the syncthing cli to set auto-accept-folders
     summary: |
-      don't accept all folders anymore
+      Set auto-accept-folders for the remote machine
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
+    prompt: Set syncthing auto accept all folders from the remote instance to {{.SYNCTHING_ACCEPT_FOLDERS}}?
     cmds:
-      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set true"
-
-  disable-accept:
-    desc: Call the syncthing cli to not accept all folder to be shared
-    summary: |
-      don't accept all folders anymore
-      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
-    cmds:
-      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set false"
+      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set {{.SYNCTHING_ACCEPT_FOLDERS}}"
 
   list-folders:
     desc: List folders on a syncthing instance
