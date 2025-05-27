@@ -35,7 +35,7 @@ tasks:
           poetry \
           ruff \
           organize-tool \
-          git+https://github.com/white-gecko/git-watchtower
+          git+https://github.com/white-gecko/toelpel
 
   upkgs:ppm:
     aliases: ["upkgs:pulsar"]
