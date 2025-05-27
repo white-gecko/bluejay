@@ -35,7 +35,6 @@ tasks:
           poetry \
           ruff \
           organize-tool \
-          git+https://github.com/enzet/map-machine \
           git+https://github.com/white-gecko/git-watchtower
 
   upkgs:ppm:
