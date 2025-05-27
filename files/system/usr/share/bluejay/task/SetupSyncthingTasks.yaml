@@ -76,6 +76,8 @@ tasks:
         {{.SYNCTHING_LOCAL}} config options natenabled set false
         {{.SYNCTHING_LOCAL}} config options relays-enabled set false
         {{.SYNCTHING_LOCAL}} config options global-ann-enabled set false
+        {{.SYNCTHING_LOCAL}} config options uraccepted set -1
+        {{.SYNCTHING_LOCAL}} config options urseen set 3
         {{.SYNCTHING_LOCAL}} config defaults folder path set {{.DEFAULT_FOLDER_PATH}}
 
   handshake:
