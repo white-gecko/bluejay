@@ -32,7 +32,6 @@ tasks:
           CHEZMOI_REPOSITORY:
             ref: .INIT.CHEZMOI_REPOSITORY
       - task: printers
-      - task: user-tasks
       - task: languagetool
 
   user-tasks:
