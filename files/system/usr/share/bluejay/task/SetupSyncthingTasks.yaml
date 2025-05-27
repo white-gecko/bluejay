@@ -127,7 +127,6 @@ tasks:
 
   setup-folders:
     desc: Setup the folders
-    interactive: true
     cmds:
       - for:
           var: SYNCTHING_FOLDER_IDS
