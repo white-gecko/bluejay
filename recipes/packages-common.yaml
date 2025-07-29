@@ -55,8 +55,8 @@ install:
   - pipx
   - python3-pip
   - python3-virtualenvwrapper
-  # development for pywb
-  #- python3.11
+  # development for pywb, pysparql-anything
+  - python3.11
   #- python3-cairo-devel
   # desktop
   - tmux
