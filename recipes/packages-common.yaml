@@ -3,9 +3,6 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/aflyhorse/libjpeg/repo/fedora-%OS_VERSION%/aflyhorse-libjpeg-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/jerrycasiano/FontManager/repo/fedora-%OS_VERSION%/jerrycasiano-FontManager-fedora-%OS_VERSION%.repo
-  - https://download.vscodium.com/rpms/
-keys:
-  - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 install:
   # from corp repos
   - starship
@@ -42,7 +39,6 @@ install:
   - entr
   - openssl
   - cmake
-  - codium
   #- gcc-c++
   - podman-docker
   - ansible

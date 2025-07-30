@@ -1,0 +1,8 @@
+type: rpm-ostree
+repos:
+  - https://download.vscodium.com/rpms/
+keys:
+  - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+install:
+  # external
+  - codium
