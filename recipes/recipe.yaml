@@ -11,6 +11,7 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   - from-file: packages-remove-docker.yaml
+  - from-file: packages-remove-vscode.yaml
   - from-file: packages-common.yaml
   - from-file: packages-bluefin.yaml
   - from-file: packages-pulsar.yaml
