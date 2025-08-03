@@ -46,6 +46,18 @@ tasks:
         ppm install language-rdf
         ppm install language-latex
 
+  upkgs:codium:
+    desc: Install codium extensions
+    summary: |
+      See also: https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_command-line-extension-management
+    cmds:
+      - |
+        codium --install-extension akamud.vscode-theme-onelight
+        codium --install-extension ms-python.python
+        codium --install-extension vue.volar
+        codium --install-extension vemonet.stardog-rdf-grammars
+        codium --install-extension efoerster.texlab
+
   yarn:
     aliases: ["corepack"]
     desc: Enable yarn via corepack
