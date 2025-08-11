@@ -23,6 +23,7 @@ tasks:
           minikube \
           kubernetes-cli \
           openshift-cli \
+          talosctl \
           languagetool \
           fasttext \
           topgrade
