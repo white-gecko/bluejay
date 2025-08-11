@@ -54,6 +54,7 @@ tasks:
     cmds:
       - |
         codium --install-extension akamud.vscode-theme-onelight
+        codium --install-extension zguolee.tabler-icons
         codium --install-extension ms-python.python
         codium --install-extension vue.volar
         codium --install-extension vemonet.stardog-rdf-grammars
