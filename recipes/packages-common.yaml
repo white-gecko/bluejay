@@ -104,6 +104,7 @@ install:
   - NetworkManager-openvpn-gnome
   - NetworkManager-ssh-gnome
   - NetworkManager-vpnc-gnome
+  - gparted
   # gnome setup
   - gnome-shell-extension-caffeine
   - gnome-shell-extension-user-theme
