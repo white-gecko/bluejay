@@ -23,7 +23,6 @@ jobs:
         recipe:
           # !! Add your recipes here
           - recipe.yaml
-          - recipe-no-pulsar.yaml
           - recipe-silverblue.yaml
     steps:
        # the build is fully handled by the reusable github action

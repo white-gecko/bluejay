@@ -8,7 +8,7 @@ After setup, it is recommended you update this README to describe your custom im
 
 - With [task](https://taskfile.dev/) and `utask`, just like `ujust`.
 - With [fish](https://fishshell.com/) and [starship](https://starship.rs/)
-- With running [pulsar](https://pulsar-edit.dev/)
+- With [codium](https://vscodium.com/)
 - With [podman](https://podman.io/) and podman-docker (docker is removed)
 - With [quarto](https://quarto.org/)
 - Many more packages

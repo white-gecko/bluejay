@@ -14,7 +14,6 @@ modules:
   - from-file: packages-remove-vscode.yaml
   - from-file: packages-common.yaml
   - from-file: packages-bluefin.yaml
-  - from-file: packages-pulsar.yaml
   - from-file: packages-codium.yaml
   - from-file: flatpaks.yaml
   - from-file: common.yaml
