@@ -12,7 +12,7 @@ tasks:
     cmds:
       - task: upkgs:brew
       - task: upkgs:pipx
-      - task: upkgs:ppm
+      - task: upkgs:codium
 
   upkgs:brew:
     desc: Install homebrew packages
@@ -37,15 +37,6 @@ tasks:
           ruff \
           organize-tool \
           git+https://github.com/white-gecko/toelpel
-
-  upkgs:ppm:
-    aliases: ["upkgs:pulsar"]
-    desc: Install pulsar packages
-    cmds:
-      - |
-        ppm install language-vue
-        ppm install language-rdf
-        ppm install language-latex
 
   upkgs:codium:
     desc: Install codium extensions

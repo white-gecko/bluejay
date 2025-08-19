@@ -4,4 +4,4 @@ tasks:
   build:iso:
     desc: Build an ISO image for bluejay
     cmds:
-      - sudo bluebuild generate-iso --iso-name bluejay-os.iso --output-dir build image ghcr.io/white-gecko/bluejay-no-pulsar:latest
+      - sudo bluebuild generate-iso --iso-name bluejay-os.iso --output-dir build image ghcr.io/white-gecko/bluejay:latest
