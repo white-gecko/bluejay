@@ -62,7 +62,6 @@ install:
   - tmux
   - keepassxc
   - firefox
-  - thunderbird
   - chromium
   - libreoffice
   - langpacks-de
