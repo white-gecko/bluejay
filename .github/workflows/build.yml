@@ -24,6 +24,7 @@ jobs:
           # !! Add your recipes here
           - recipe.yaml
           - recipe-silver.yaml
+          - recipe-deck.yaml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
