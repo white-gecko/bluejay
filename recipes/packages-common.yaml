@@ -57,6 +57,7 @@ install:
   - pipx
   - python3-pip
   - python3-virtualenvwrapper
+  - python3-devel
   # development for pywb, pysparql-anything
   - python3.11
   #- python3-cairo-devel
