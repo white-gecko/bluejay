@@ -7,11 +7,13 @@ tasks:
   default:
     desc: Setup secrets, connections, shared folders, dotfiles, printers, and more
     summary: |
-      The kee-config env should as minimum set the variables
+      This tasks execpts the following variables to be set. This should happen in the InitTasks.yaml
+      These should be set as minimum by: kee-config env
       - SYNCTHING_REMOTE_ADDRESS
       - SYNCTHING_REMOTE_APIKEY
-      - SYNCTHING_FOLDER_IDS < should be set interactively
       - INIT_CHEZMOI_REPOSITORY
+      The following should be set interactively.
+      - SYNCTHING_FOLDER_IDS < should be set interactively
     prompt: Make sure the INIT_KEEPASS_FILE, INIT_KEEPASS_PASSWORD and if reqired INIT_KEEPASS_KEY_FILE are set
     vars:
       INIT_JSON:
