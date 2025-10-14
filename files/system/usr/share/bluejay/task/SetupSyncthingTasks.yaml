@@ -44,17 +44,9 @@ tasks:
         vars:
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
           SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
-      - task: auto-accept-folders
-        vars:
-          SYNCTHING_ACCEPT_FOLDERS: "true"
-          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
       - task: setup-folders
         vars:
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
-      - task: auto-accept-folders
-        vars:
-          SYNCTHING_ACCEPT_FOLDERS: "false"
-          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
 
   activate:
     desc: Activate syncthing to start automatically
@@ -74,7 +66,6 @@ tasks:
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
       - |
-        # accept all folders
         {{.SYNCTHING_LOCAL}} config options natenabled set false
         {{.SYNCTHING_LOCAL}} config options relays-enabled set false
         {{.SYNCTHING_LOCAL}} config options global-ann-enabled set false
@@ -85,15 +76,6 @@ tasks:
     cmds:
       - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
       - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
-
-  auto-accept-folders:
-    desc: Call the syncthing cli to set auto-accept-folders
-    summary: |
-      Set auto-accept-folders for the remote machine
-      https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
-    prompt: Set syncthing auto accept all folders from the remote instance to {{.SYNCTHING_ACCEPT_FOLDERS}}?
-    cmds:
-      - "{{.SYNCTHING_LOCAL}} config devices {{.SYNCTHING_REMOTE_ID}} auto-accept-folders set {{.SYNCTHING_ACCEPT_FOLDERS}}"
 
   list-folders:
     desc: List folders on a syncthing instance
@@ -134,4 +116,10 @@ tasks:
       Call the syncthing cli to serve the directories to the client, needs to be run on the serving host
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
-      - "{{.SYNCTHING_REMOTE}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
+      - |
+        FOLDER_PATH=$({{.SYNCTHING_REMOTE}} config dump-json | jq -r ".folders[] | select(.id==\"{{.SYNCTHING_FOLDER_ID}}\") | .path")
+        FOLDER_LABEL=$({{.SYNCTHING_REMOTE}} config dump-json | jq -r ".folders[] | select(.id==\"{{.SYNCTHING_FOLDER_ID}}\") | .label")
+
+        {{.SYNCTHING_REMOTE}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}
+        {{.SYNCTHING_LOCAL}} config folders add --id {{.SYNCTHING_FOLDER_ID}} --path $FOLDER_PATH --label $FOLDER_LABEL
+        {{.SYNCTHING_LOCAL}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_REMOTE_ID}}
