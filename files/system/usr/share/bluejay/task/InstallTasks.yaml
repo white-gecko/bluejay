@@ -26,7 +26,8 @@ tasks:
           talosctl \
           languagetool \
           fasttext \
-          topgrade
+          topgrade \
+          eza
 
   upkgs:pipx:
     desc: Install pipx packages
