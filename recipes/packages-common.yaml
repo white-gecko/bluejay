@@ -51,6 +51,7 @@ install:
   - rustup
   - rust
   - cargo
+  - imapsync
   - gitg
   - tig
   - gnuplot
