@@ -7,8 +7,6 @@ tasks:
       This is required for dualboot systems with windows, also read https://www.baeldung.com/linux/real-time-clock-rtc-local-time
     cmds:
       - /bin/timedatectl set-local-rtc 1 --adjust-system-clock
-      - sudo systemctl enable systemd-timesyncd
-      - sudo systemctl start systemd-timesyncd
 
   keepassxc:
     desc: Fix KeepassXC to work with LibreWolf and Firefox
