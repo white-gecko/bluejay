@@ -71,7 +71,7 @@ install:
     # desktop
     - tmux
     - keepassxc
-    - firefox
+    # - firefox # moved to extra recipe due to issues on bazzite
     - chromium
     - libreoffice
     - langpacks-de
