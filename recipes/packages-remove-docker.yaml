@@ -1,8 +1,9 @@
-type: rpm-ostree
+type: dnf
 remove:
-  # conflicts with podman-docker
-  - docker-ce
-  - docker-ce-cli
-  - docker-buildx-plugin
-  - docker-compose-plugin
-  - docker-ce-rootless-extras
+  packages:
+    # conflicts with podman-docker
+    - docker-ce
+    - docker-ce-cli
+    - docker-buildx-plugin
+    - docker-compose-plugin
+    - docker-ce-rootless-extras

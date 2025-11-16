@@ -2,7 +2,8 @@ modules:
   - type: script
     scripts:
       - install-codium-repo.sh
-  - type: rpm-ostree
+  - type: dnf
     install:
-      # external
-      - codium
+      packages:
+        # external
+        - codium

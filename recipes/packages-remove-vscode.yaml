@@ -1,3 +1,4 @@
-type: rpm-ostree
+type: dnf
 remove:
-  - code
+  packages:
+    - code
