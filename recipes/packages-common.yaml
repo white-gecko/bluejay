@@ -48,6 +48,7 @@ install:
     - entr
     - openssl
     - cmake
+    - gcc-c++
     - podman-docker
     - ansible
     - ansible-collection-ansible-posix
