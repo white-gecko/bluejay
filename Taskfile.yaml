@@ -4,4 +4,4 @@ tasks:
   build:iso:
     desc: Build an ISO image for bluejay
     cmds:
-      - sudo bluebuild generate-iso --iso-name bluejay-os.iso --output-dir build image ghcr.io/white-gecko/bluejay:latest
+      - bluebuild generate-iso --web-ui --build-driver podman --inspect-driver podman --run-driver podman --iso-name bluejay-os-$(date +%F-%s).iso --output-dir build image ghcr.io/white-gecko/bluejay:latest
