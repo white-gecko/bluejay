@@ -74,4 +74,6 @@ To provide the init bundle/the key file, mount it according to https://de.linux-
 
 ### Use LaTeX
 
-To use latex install it in a toolbox, install zsh fasd fzf task texlive-import texlive-scheme-medium.
+To use latex you have two options:
+- install it in a toolbox, install zsh fasd fzf task texlive-import texlive-scheme-medium
+- use the podman image from https://github.com/white-gecko/alpine-texlive-full-plus
