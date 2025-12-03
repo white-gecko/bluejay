@@ -47,6 +47,7 @@ tasks:
       - task: setup-folders
         vars:
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
 
   activate:
     desc: Activate syncthing to start automatically
@@ -107,6 +108,7 @@ tasks:
         vars:
           SYNCTHING_FOLDER_ID: "{{.ITEM}}"
           SYNCTHING_LOCAL_ID: "{{.SYNCTHING_LOCAL_ID}}"
+          SYNCTHING_REMOTE_ID: "{{.SYNCTHING_REMOTE_ID}}"
       - task: list-local-folders
 
   share-folder:
