@@ -70,6 +70,7 @@ install:
     - python3.11
     #- python3-cairo-devel
     - libxml2-devel
+    - libxslt-devel
     # desktop
     - tmux
     - keepassxc
