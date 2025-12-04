@@ -69,6 +69,7 @@ install:
     # development for pywb, pysparql-anything
     - python3.11
     #- python3-cairo-devel
+    - libxml2-devel
     # desktop
     - tmux
     - keepassxc
