@@ -119,8 +119,8 @@ tasks:
       https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c/1731999
     cmds:
       - |
-        FOLDER_PATH=$({{.SYNCTHING_REMOTE}} config dump-json | jq -r ".folders[] | select(.id==\"{{.SYNCTHING_FOLDER_ID}}\") | .path")
         FOLDER_LABEL=$({{.SYNCTHING_REMOTE}} config dump-json | jq -r ".folders[] | select(.id==\"{{.SYNCTHING_FOLDER_ID}}\") | .label")
+        FOLDER_PATH="{{.DEFAULT_FOLDER_PATH}}/$FOLDER_LABEL"
 
         {{.SYNCTHING_REMOTE}} config folders {{.SYNCTHING_FOLDER_ID}} devices add --device-id {{.SYNCTHING_LOCAL_ID}}
         {{.SYNCTHING_LOCAL}} config folders add --id {{.SYNCTHING_FOLDER_ID}} --path $FOLDER_PATH --label $FOLDER_LABEL
