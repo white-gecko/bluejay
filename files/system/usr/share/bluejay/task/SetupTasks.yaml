@@ -52,7 +52,7 @@ tasks:
       Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
     silent: true
     cmds:
-      - kee-config --export -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
+      - kee-config --export -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   connections:
     desc: Configure the users wifis from keepass
