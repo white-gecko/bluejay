@@ -10,9 +10,6 @@ install:
     - repo: copr:copr.fedorainfracloud.org:atim:starship
       packages:
         - starship
-    - repo: copr:copr.fedorainfracloud.org:mguessan:davmail
-      packages:
-        - davmail
     # install from copr:copr.fedorainfracloud.org:jerrycasiano:FontManager
     # but requires dependencies from other repos
     - font-manager
