@@ -13,6 +13,7 @@ modules:
   - from-file: packages-remove-docker.yaml
   - from-file: packages-remove-vscode.yaml
   - from-file: packages-common.yaml
+  - from-file: packages-driver.yaml
   - from-file: packages-codium.yaml
   - from-file: packages-firefox.yaml
   - from-file: flatpaks.yaml

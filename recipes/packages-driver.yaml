@@ -1,0 +1,8 @@
+type: dnf
+install:
+  packages:
+    - repo:
+        nonfree: rpmfusion
+      packages:
+        # for macbook pro
+        - broadcom-wl

@@ -54,9 +54,6 @@ install:
     - xournal
     - yt-dlp
     - pdftk-java
-    # drivers
-    # for macbook pro
-    - broadcom-wl
     # development
     - sqlitebrowser
     - sqlite
