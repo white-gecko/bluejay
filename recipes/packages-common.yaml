@@ -21,20 +21,39 @@ install:
     - https://github.com/go-task/task/releases/download/v3.45.5/task_linux_amd64.rpm
     # foundation
     - neovim
-    - gnome-text-editor
     - syncthing
+    - gnome-text-editor
+    - git
+    - git-credential-libsecret
+    - curl
+    # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
+    - cups-pdf
+    # system
+    - NetworkManager-openconnect-gnome
+    - NetworkManager-openvpn-gnome
+    - NetworkManager-ssh-gnome
+    - NetworkManager-vpnc-gnome
+    - gparted
+    # gnome setup
+    - gnome-shell-extension-caffeine
+    - gnome-shell-extension-user-theme
+    - gnome-remote-desktop
+    - gnome-browser-connector
+    # fonts
+    - open-sans-fonts
+    # handy tools
     - rsync
     - restic
     - pwgen
     - htop
     - ack
-    - git
-    - git-credential-libsecret
-    - curl
     - moreutils
     - dos2unix
-    - xclip
-    - gnome-font-viewer
+    - diffpdf
+    - baobab
+    - xournal
+    - yt-dlp
+    - pdftk-java
     # development
     - sqlitebrowser
     - sqlite
@@ -66,22 +85,15 @@ install:
     - python3-pip
     - python3-virtualenvwrapper
     - python3-devel
-    # development for pywb, pysparql-anything
-    - python3.11
-    #- python3-cairo-devel
-    - libxml2-devel
-    - libxslt-devel
     # desktop
     - tmux
     - keepassxc
-    # - firefox # moved to extra recipe due to issues on bazzite
     - chromium
     - libreoffice
     - langpacks-de
     - langpacks-en
     - hunspell-de
     - hunspell-en
-    - qgis
     - gpsbabel
     - qcad
     - ocrmypdf
@@ -89,40 +101,18 @@ install:
     - tesseract-langpack-frk
     - tesseract-script-fraktur
     - tesseract-osd
-    - qrencode
-    - hedgewars
-    - moon-buggy
     - musescore
     - file-roller-nautilus
     - cheese
     - calls
-    - baobab
     - eog
     - eog-plugins
-    - diffpdf
-    - xournal
-    - pdftk-java
     - calibre
-    - yubikey-manager
-    - qflipper
-    - yt-dlp
-    - remmina-plugins-exec
-    - remmina-plugins-rdp
-    - remmina-plugins-secret
-    - remmina-plugins-vnc
     #- mozilla-openh264
-    # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
-    - cups-pdf
-    # system
-    - NetworkManager-openconnect-gnome
-    - NetworkManager-openvpn-gnome
-    - NetworkManager-ssh-gnome
-    - NetworkManager-vpnc-gnome
-    - gparted
-    # gnome setup
-    - gnome-shell-extension-caffeine
-    - gnome-shell-extension-user-theme
-    - gnome-remote-desktop
-    - gnome-browser-connector
-    # fonts
-    - open-sans-fonts
+    # games
+    - hedgewars
+    - moon-buggy
+    # temporary/staging
+    - gnome-font-viewer
+    - xclip
+    # maybe remove
