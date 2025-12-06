@@ -1,0 +1,6 @@
+# https://blue-build.org/reference/modules/akmods/
+type: akmods
+install:
+  # install broadcom-wl from rpmfusion
+  # https://github.com/ublue-os/akmods?tab=readme-ov-file
+  - wl
