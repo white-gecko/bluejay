@@ -23,6 +23,7 @@ tasks:
     cmds:
       - task: secrets
       - task: connections
+        ignore_error: true
       - task: syncthing
         vars:
           SYNCTHING_REMOTE_ADDRESS:
@@ -31,12 +32,16 @@ tasks:
             ref: .INIT.SYNCTHING_REMOTE_ADDRESS_GUI
           SYNCTHING_REMOTE_APIKEY:
             ref: .INIT.SYNCTHING_REMOTE_APIKEY
+        ignore_error: true
       - task: chezmoi
         vars:
           CHEZMOI_REPOSITORY:
             ref: .INIT.CHEZMOI_REPOSITORY
+        ignore_error: true
       - task: printers
+        ignore_error: true
       - task: languagetool
+        ignore_error: true
 
   user-tasks:
     desc: Create a user Taskfile for custom tasks.
@@ -53,6 +58,8 @@ tasks:
     summary: |
       Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
     silent: true
+    preconditions:
+      - gum confirm "Setup secrets?"
     cmds:
       - kee-config --export -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
@@ -61,16 +68,22 @@ tasks:
     aliases: ["wifis"]
     interactive: true
     silent: true
+    preconditions:
+      - gum confirm "Setup connections?"
     cmds:
       - sudo $(which kee-config) --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   chezmoi:
     desc: Initialize the chezmoi repository
+    preconditions:
+      - gum confirm "Setup chezmoi?"
     cmds:
       - chezmoi init --apply {{.CHEZMOI_REPOSITORY}}
 
   printers:
     desc: Install all printers
+    preconditions:
+      - gum confirm "Setup printers?"
     cmds:
       - task: printers:cups-pdf
 
@@ -85,6 +98,8 @@ tasks:
     desc: Setup languagetool and fasttext
     summary: |
       Get the fasttext model and configure languagetool to use the fasttext model and binary
+    preconditions:
+      - gum confirm "Setup languagetool?"
     cmds:
       - task: fasttext
       - |
