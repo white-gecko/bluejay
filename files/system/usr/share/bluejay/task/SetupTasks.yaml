@@ -27,6 +27,8 @@ tasks:
         vars:
           SYNCTHING_REMOTE_ADDRESS:
             ref: .INIT.SYNCTHING_REMOTE_ADDRESS
+          SYNCTHING_REMOTE_ADDRESS_GUI:
+            ref: .INIT.SYNCTHING_REMOTE_ADDRESS_GUI
           SYNCTHING_REMOTE_APIKEY:
             ref: .INIT.SYNCTHING_REMOTE_APIKEY
       - task: chezmoi
