@@ -3,7 +3,7 @@ version: '3'
 vars:
   DEFAULT_FOLDER_PATH: ~/Documents
   SYNCTHING_LOCAL: syncthing cli
-  SYNCTHING_REMOTE: syncthing cli --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}
+  SYNCTHING_REMOTE: syncthing cli --gui-address {{.SYNCTHING_REMOTE_ADDRESS_GUI}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}
 
 tasks:
 
@@ -13,10 +13,11 @@ tasks:
       Setup the shared directories with syncthing for the current user, enable syncthing, maybe
 
       SYNCTHING_LOCAL: is the syncthing command to execute, it could be e.g. `syncthing` or e.g. some docker exec command
-      SYNCTHING_REMOTE: is the remote syncthing command to execute, it could be e.g. `ssh remote_host syncthing` or `syncthing --gui-address {{.SYNCTHING_REMOTE_ADDRESS}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}`
+      SYNCTHING_REMOTE: is the remote syncthing command to execute, it could be e.g. `ssh remote_host syncthing` or `syncthing --gui-address {{.SYNCTHING_REMOTE_ADDRESS_GUI}} --gui-apikey {{.SYNCTHING_REMOTE_APIKEY}}`
       DEFAULT_FOLDER_PATH: set to ~/Documents, is the directory in which the accepted folder are placed
 
       variables expected:
+      - SYNCTHING_REMOTE_ADDRESS_GUI: the hostname and optionally port of the remote syncthing instance
       - SYNCTHING_REMOTE_ADDRESS: the hostname and optionally port of the remote syncthing instance
       - SYNCTHING_REMOTE_APIKEY: the apikey can be obtained with `grep apikey config.xml` from the syncting config
       - SYNCTHING_FOLDER_IDS: the syncthing ids of the folders to share wih this machine (if you don't know them, run utask syncthing:list-remote-folders first)
@@ -75,7 +76,7 @@ tasks:
   handshake:
     desc: Let the instances get to know each other
     cmds:
-      - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}}"
+      - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}} --addresses tcp://{{.SYNCTHING_REMOTE_ADDRESS}}"
       - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
 
   list-folders:
