@@ -57,6 +57,7 @@ tasks:
     desc: Install all user keys
     summary: |
       Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
+    interactive: true
     silent: true
     preconditions:
       - gum confirm "Setup secrets?"
@@ -75,6 +76,7 @@ tasks:
 
   chezmoi:
     desc: Initialize the chezmoi repository
+    interactive: true
     preconditions:
       - gum confirm "Setup chezmoi?"
     cmds:
@@ -82,6 +84,7 @@ tasks:
 
   printers:
     desc: Install all printers
+    interactive: true
     preconditions:
       - gum confirm "Setup printers?"
     cmds:
@@ -98,6 +101,7 @@ tasks:
     desc: Setup languagetool and fasttext
     summary: |
       Get the fasttext model and configure languagetool to use the fasttext model and binary
+    interactive: true
     preconditions:
       - gum confirm "Setup languagetool?"
     cmds:
