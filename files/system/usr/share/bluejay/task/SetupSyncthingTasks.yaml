@@ -78,6 +78,8 @@ tasks:
 
   handshake:
     desc: Let the instances get to know each other
+    summary: |
+      Currently the address is not passed due to: https://github.com/syncthing/syncthing/issues/9058
     cmds:
       - "{{.SYNCTHING_LOCAL}} config devices add --device-id {{.SYNCTHING_REMOTE_ID}} --addresses tcp://{{.SYNCTHING_REMOTE_ADDRESS}}"
       - "{{.SYNCTHING_REMOTE}} config devices add --device-id {{.SYNCTHING_LOCAL_ID}}"
