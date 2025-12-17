@@ -57,10 +57,8 @@ tasks:
     desc: Install all user keys
     summary: |
       Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
-    interactive: true
     silent: true
-    preconditions:
-      - gum confirm "Setup secrets?"
+    prompt: Setup secrets?
     cmds:
       - kee-config --export -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
@@ -69,24 +67,19 @@ tasks:
     aliases: ["wifis"]
     interactive: true
     silent: true
-    preconditions:
-      - gum confirm "Setup connections?"
+    prompt: Setup connections?
     cmds:
       - sudo $(which kee-config) --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   chezmoi:
     desc: Initialize the chezmoi repository
-    interactive: true
-    preconditions:
-      - gum confirm "Setup chezmoi?"
+    prompt: Setup chezmoi?
     cmds:
       - chezmoi init --apply {{.CHEZMOI_REPOSITORY}}
 
   printers:
     desc: Install all printers
-    interactive: true
-    preconditions:
-      - gum confirm "Setup printers?"
+    prompt: Setup printers?
     cmds:
       - task: printers:cups-pdf
 
@@ -101,9 +94,7 @@ tasks:
     desc: Setup languagetool and fasttext
     summary: |
       Get the fasttext model and configure languagetool to use the fasttext model and binary
-    interactive: true
-    preconditions:
-      - gum confirm "Setup languagetool?"
+    prompt: Setup languagetool?
     cmds:
       - task: fasttext
       - |

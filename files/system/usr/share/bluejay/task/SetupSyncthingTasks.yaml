@@ -22,8 +22,7 @@ tasks:
       - SYNCTHING_REMOTE_APIKEY: the apikey can be obtained with `grep apikey config.xml` from the syncting config
       - SYNCTHING_FOLDER_IDS: the syncthing ids of the folders to share wih this machine (if you don't know them, run utask syncthing:list-remote-folders first)
     interactive: true
-    preconditions:
-      - gum confirm "Setup syncthing?"
+    prompt: Setup syncthing?
     cmds:
       - task: activate
       - task: config

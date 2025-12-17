@@ -3,6 +3,7 @@ version: '3'
 tasks:
   default:
     desc: Initialize the whole system
+    interactive: true
     cmds:
       - |
         gum style \
