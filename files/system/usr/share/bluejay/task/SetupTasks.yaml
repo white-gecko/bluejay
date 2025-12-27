@@ -105,3 +105,11 @@ tasks:
     desc: Download the model
     cmds:
       - curl -L -o /home/linuxbrew/.linuxbrew/opt/fasttext/models https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+
+  fisher:
+    desc: Install fischer, fish plugin manager
+    cmds:
+      - |
+        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+        fisher list
+        fisher update
