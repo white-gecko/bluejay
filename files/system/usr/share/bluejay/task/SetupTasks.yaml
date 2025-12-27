@@ -42,6 +42,8 @@ tasks:
         ignore_error: true
       - task: languagetool
         ignore_error: true
+      - task: fischer
+        ignore_error: true
 
   user-tasks:
     desc: Create a user Taskfile for custom tasks.
@@ -108,6 +110,7 @@ tasks:
 
   fisher:
     desc: Install fischer, fish plugin manager
+    prompt: Setup fisher?
     cmds:
       - |
         curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
