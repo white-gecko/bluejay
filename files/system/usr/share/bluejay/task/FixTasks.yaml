@@ -28,21 +28,21 @@ tasks:
         vars:
           CANID: io.gitlab.librewolf-community
           DOT_CANID: .librewolf
-      - #task: keepassxc-librewolf:allow-access
-        #vars:
-        #  CANID: io.gitlab.librewolf-community
+      - task: keepassxc-canid:allow-access
+        vars:
+          CANID: io.gitlab.librewolf-community
       - #task: keepassxc:expose-socket
 
   keepassxc-firefox:
-    desc: Fix KeepassXC to work with LibreWolf
+    desc: Fix KeepassXC to work with Firefox
     cmds:
       - task: keepassxc-canid:start-keepassxc-proxy
         vars:
           CANID: org.mozilla.firefox
           DOT_CANID: .mozilla
-      - #task: keepassxc-canid:allow-access
-        #vars:
-        #  CANID: io.gitlab.librewolf-community
+      - task: keepassxc-canid:allow-access
+        vars:
+          CANID: io.gitlab.librewolf-community
       - #task: keepassxc:expose-socket
 
   keepassxc-canid:start-keepassxc-proxy:
