@@ -83,6 +83,7 @@ install:
     - python3-virtualenvwrapper
     - python3-devel
     # desktop
+    - papers
     - tmux
     - keepassxc
     - chromium
