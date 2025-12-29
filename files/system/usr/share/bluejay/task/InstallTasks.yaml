@@ -46,11 +46,29 @@ tasks:
     cmds:
       - |
         codium --install-extension akamud.vscode-theme-onelight
-        codium --install-extension zguolee.tabler-icons
+        codium --install-extension pkief.material-product-icons
+        codium --install-extension thang-nm.flow-icons
         codium --install-extension ms-python.python
+        codium --install-extension ms-python.debugpy
         codium --install-extension vue.volar
         codium --install-extension vemonet.stardog-rdf-grammars
+        codium --install-extension zazuko.vscode-rdf-sketch
         codium --install-extension efoerster.texlab
+        codium --install-extension charliermarsh.ruff
+        codium --install-extension continue.continue
+        codium --install-extension helm-ls.helm-ls
+        codium --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+        codium --install-extension ms-toolsai.jupyter
+        codium --install-extension ms-toolsai.jupyter-keymap
+        codium --install-extension ms-toolsai.jupyter-renderers
+        codium --install-extension ms-toolsai.vscode-jupyter-cell-tags
+        codium --install-extension ms-toolsai.vscode-jupyter-slideshow
+        codium --install-extension redhat.java
+        codium --install-extension redhat.vscode-openshift-connector
+        codium --install-extension redhat.vscode-redhat-account
+        codium --install-extension redhat.vscode-yaml
+        codium --install-extension task.vscode-task
+        codium --install-extension valentjn.vscode-ltex
 
   yarn:
     aliases: ["corepack"]
