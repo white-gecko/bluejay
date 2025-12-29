@@ -27,7 +27,10 @@ tasks:
           languagetool \
           fasttext \
           topgrade \
-          eza
+          eza \
+          dysk \
+          trash-cli \
+          bat
 
   upkgs:pipx:
     desc: Install pipx packages
