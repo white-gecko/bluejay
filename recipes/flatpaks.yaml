@@ -28,4 +28,5 @@ configurations:
       - org.inkscape.Inkscape
       - org.openstreetmap.josm
       - org.signal.Signal
+      - re.sonny.Eloquent
       - re.sonny.Tangram
