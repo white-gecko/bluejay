@@ -72,6 +72,7 @@ tasks:
         codium --install-extension redhat.vscode-yaml
         codium --install-extension task.vscode-task
         codium --install-extension valentjn.vscode-ltex
+        codium --update-extensions
 
   yarn:
     aliases: ["corepack"]
