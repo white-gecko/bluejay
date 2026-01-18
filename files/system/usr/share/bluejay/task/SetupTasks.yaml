@@ -100,8 +100,8 @@ tasks:
     cmds:
       - task: fasttext
       - |
-        echo "fasttextModel=/home/linuxbrew/.linuxbrew/opt/fasttext/models/lid.176.bin" >> /var/home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
-        echo "fasttextBinary=/home/linuxbrew/.linuxbrew/bin/fasttext" >> /var/home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
+        echo "fasttextModel=/home/linuxbrew/.linuxbrew/opt/fasttext/models/lid.176.bin" >> /home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
+        echo "fasttextBinary=/home/linuxbrew/.linuxbrew/bin/fasttext" >> /home/linuxbrew/.linuxbrew/etc/languagetool/server.properties
 
   fasttext:
     desc: Download the model
