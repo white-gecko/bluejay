@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  ptyxis-transparency:
+    desc: Set ptyxis transparency
+    summary: See also https://gitlab.gnome.org/chergert/ptyxis/-/issues/547
+    cmds:
+      - dconf write '/org/gnome/Ptyxis/Profiles/{{.PTYXIS_PROFILE}}/opacity' 0.9
