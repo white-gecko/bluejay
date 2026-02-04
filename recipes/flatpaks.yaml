@@ -25,6 +25,7 @@ configurations:
       - io.podman_desktop.PodmanDesktop
       - org.gimp.GIMP
       - org.gnome.Fractal
+      - org.gnome.SimpleScan
       - org.inkscape.Inkscape
       - org.openstreetmap.josm
       - org.signal.Signal
