@@ -8,6 +8,13 @@ tasks:
     cmds:
       - /bin/timedatectl set-local-rtc 1 --adjust-system-clock
 
+  mac:fnlock:
+    desc: Fix fnlock for mac devices
+    summary: |
+      Per default it is set to 3, 2 is what you want, 1 is media mode.
+    cmds:
+      - echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
   keepassxc:
     desc: Fix KeepassXC to work with LibreWolf and Firefox
     summary: |
