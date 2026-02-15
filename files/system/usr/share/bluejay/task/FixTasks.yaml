@@ -15,6 +15,13 @@ tasks:
     cmds:
       - echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
 
+  gdm:keyboardlayout:
+    desc: Set the x11-keymap to de, if it was not done by the installer
+    summery: |
+      This appears to set `XKBLAYOUT=de` in `/etc/vconsole.conf`.
+    cmds:
+      - sudo localectl set-x11-keymap de
+
   keepassxc:
     desc: Fix KeepassXC to work with LibreWolf and Firefox
     summary: |
