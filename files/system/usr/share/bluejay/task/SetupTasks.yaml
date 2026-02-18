@@ -58,20 +58,22 @@ tasks:
   secrets:
     desc: Install all user keys
     summary: |
-      Setup the init secrets and call kee-config to export the secrets from the keepass file to the system, e.g. gpg, ssh, wifi connections
+      Call kee-config to export the secrets from the keepass file to the home folder, e.g. gpg, ssh
     silent: true
     prompt: Setup secrets?
     cmds:
-      - kee-config --export -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
+      - kee-config --exclude wifi --export -f "{{.INIT_KEEPASS_FILE}}" -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   connections:
     desc: Configure the users wifis from keepass
+    summary: |
+      Call kee-config to export the secrets from the keepass file to the system, e.g. wifi connections
     aliases: ["wifis"]
     interactive: true
     silent: true
     prompt: Setup connections?
     cmds:
-      - sudo $(which kee-config) --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
+      - sudo $(which kee-config) --include wifi --export --connections -f {{.INIT_KEEPASS_FILE}} -k "{{.INIT_KEEPASS_KEY_FILE}}" --password "{{.INIT_KEEPASS_PASSWORD}}"
 
   chezmoi:
     desc: Initialize the chezmoi repository
