@@ -42,7 +42,7 @@ tasks:
         ignore_error: true
       - task: languagetool
         ignore_error: true
-      - task: fischer
+      - task: fisher
         ignore_error: true
 
   user-tasks:
