@@ -113,6 +113,8 @@ tasks:
     prompt: Setup fisher?
     cmds:
       - |
+        fish -c "
         curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
         fisher list
         fisher update
+        "
