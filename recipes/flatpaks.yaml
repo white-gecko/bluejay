@@ -21,6 +21,7 @@ configurations:
       - io.anytype.anytype
       - io.github.flattool.Warehouse
       - io.gitlab.librewolf-community
+      - io.github.realmazharhussain.GdmSettings
       - io.missioncenter.MissionCenter
       - io.podman_desktop.PodmanDesktop
       - org.gimp.GIMP
