@@ -7,6 +7,7 @@ sources=[('xkb', 'de'), ('xkb', 'us')]
 [org.gnome.desktop.interface]
 enable-hot-corners=true
 monospace-font-name='JetBrainsMono Nerd Font 10'
+clock-format='24h'
 
 [org.gnome.desktop.peripherals.touchpad]
 natural-scroll=false
@@ -50,3 +51,9 @@ label='Bluejay'
 login-shell=false
 opacity=0.85
 palette='Idle Toes'
+
+[org.gtk.settings.file-chooser]
+clock-format='24h'
+
+[system.locale]
+region='de_DE.UTF-8'
