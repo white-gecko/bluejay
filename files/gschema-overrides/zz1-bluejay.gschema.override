@@ -1,6 +1,9 @@
 [org.gnome.desktop.wm.preferences]
 button-layout='close:'
 
+[org.gnome.desktop.input-sources]
+sources=[('xkb', 'de'), ('xkb', 'us')]
+
 [org.gnome.desktop.interface]
 enable-hot-corners=true
 monospace-font-name='JetBrainsMono Nerd Font 10'
