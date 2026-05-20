@@ -3,6 +3,7 @@ button-layout='close:'
 
 [org.gnome.desktop.interface]
 monospace-font-name='JetBrainsMono Nerd Font 10'
+gtk-enable-primary-paste=true
 
 [org.gnome.desktop.peripherals.touchpad]
 natural-scroll=false
