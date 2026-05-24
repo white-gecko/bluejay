@@ -99,7 +99,6 @@ install:
     - tesseract-langpack-frk
     - tesseract-script-fraktur
     - tesseract-osd
-    - musescore
     - file-roller-nautilus
     - cheese
     - calls

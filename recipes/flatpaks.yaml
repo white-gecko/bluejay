@@ -28,6 +28,7 @@ configurations:
       - org.gnome.Fractal
       - org.gnome.SimpleScan
       - org.inkscape.Inkscape
+      - org.musescore.MuseScore
       - org.openstreetmap.josm
       - org.signal.Signal
       - re.sonny.Eloquent
