@@ -3,7 +3,6 @@ repos:
   copr:
     - atim/starship
     - jerrycasiano/FontManager
-    - mguessan/davmail
     # - aflyhorse/libjpeg
 install:
   packages:
