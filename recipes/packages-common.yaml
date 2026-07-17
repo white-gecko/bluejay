@@ -3,7 +3,6 @@ repos:
   copr:
     - atim/starship
     - jerrycasiano/FontManager
-    # - aflyhorse/libjpeg
 install:
   packages:
     - repo: copr:copr.fedorainfracloud.org:atim:starship
@@ -12,7 +11,6 @@ install:
     # install from copr:copr.fedorainfracloud.org:jerrycasiano:FontManager
     # but requires dependencies from other repos
     - font-manager
-    #- mjpegtools-libs # <- in RPM Fusion but I'm unsure, why I needed this
     # external
     - https://github.com/go-task/task/releases/download/v3.52.0/task_3.52.0_linux_amd64.rpm
     # foundation
