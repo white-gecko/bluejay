@@ -30,7 +30,8 @@ tasks:
           eza \
           dysk \
           trash-cli \
-          bat
+          bat \
+          oven-sh/bun/bun
 
   upkgs:pipx:
     desc: Install pipx packages
