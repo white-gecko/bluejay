@@ -16,6 +16,7 @@ configurations:
       - com.transmissionbt.Transmission
       - de.haeckerfelix.Shortwave
       - de.schmidhuberj.DieBahn
+      - de.wwwtech.gitte
       - eu.betterbird.Betterbird
       - fr.romainvigier.MetadataCleaner
       - io.anytype.anytype

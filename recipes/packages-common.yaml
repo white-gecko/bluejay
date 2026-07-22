@@ -72,8 +72,6 @@ install:
     - rust
     - cargo
     - imapsync
-    - gitg
-    - tig
     - gnuplot
     - pipx
     - python3-pip
