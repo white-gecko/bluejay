@@ -77,6 +77,12 @@ install:
     - python3-pip
     - python3-virtualenvwrapper
     - python3-devel
+    # development: tauri
+    - webkit2gtk4.1-devel
+    - openssl-devel
+    - libappindicator-gtk3-devel
+    - librsvg2-devel
+    - libxdo-devel
     # desktop
     - papers
     - tmux
