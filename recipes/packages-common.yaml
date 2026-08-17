@@ -106,11 +106,8 @@ install:
     - eog
     - eog-plugins
     - calibre
-    #- mozilla-openh264
     # games
     - hedgewars
     - moon-buggy
     # temporary/staging
-    - gnome-font-viewer
-    - xclip
     # maybe remove
