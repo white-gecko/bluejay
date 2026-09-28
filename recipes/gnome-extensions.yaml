@@ -1,0 +1,7 @@
+type: gnome-extensions
+install:
+  - 1634 # Resource Monitor, Resource_Monitor@OryOn, https://extensions.gnome.org/extension/1634/resource-monitor/, https://extensions.gnome.org/away/https%253A%252F%252Fgithub.com%252F0ry0n%252FResource_Monitor%252F
+  - 5489 # Search Light, search-light@icedman.github.com, https://extensions.gnome.org/extension/5489/search-light/, https://extensions.gnome.org/away/https%253A%252F%252Fgithub.com%252Ficedman%252Fsearch-light
+  - 4170 # Home Assistant Extension, hass-gshell@geoph9-on-github, https://extensions.gnome.org/extension/4170/home-assistant-extension/, https://extensions.gnome.org/away/https%253A%252F%252Fgithub.com%252Fgeoph9%252Fhass-gshell-extension
+  # - 6307 # Quake Terminal, quake-terminal@diegodario88.github.io, https://extensions.gnome.org/extension/6307/quake-terminal/, https://extensions.gnome.org/away/https%253A%252F%252Fgithub.com%252Fdiegodario88%252Fquake-terminal
+  # - … # Gradia Capture, gradia-integration@alexandervanhee.github.io, … , https://github.com/AlexanderVanhee/gradia-capture

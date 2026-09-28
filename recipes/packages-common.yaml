@@ -31,6 +31,9 @@ install:
     # gnome setup
     - gnome-shell-extension-caffeine
     - gnome-shell-extension-user-theme
+    - gnome-shell-extension-appindicator
+    - gnome-shell-extension-gsconnect
+    - gnome-shell-extension-blur-my-shell
     - gnome-remote-desktop
     - gnome-browser-connector
     # fonts

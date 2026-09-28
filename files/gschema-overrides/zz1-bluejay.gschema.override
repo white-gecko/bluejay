@@ -15,7 +15,7 @@ natural-scroll=false
 
 [org.gnome.shell]
 favorite-apps=['io.gitlab.librewolf-community.desktop', 're.sonny.Tangram.desktop', 'org.gnome.Fractal.desktop', 'org.signal.Signal.desktop', 'org.keepassxc.KeePassXC.desktop', 'io.anytype.anytype.desktop', 'de.haeckerfelix.Shortwave.desktop', 'org.gnome.Nautilus.desktop']
-enabled-extensions=['tailscale@joaophi.github.com', 'search-light@icedman.github.com', 'caffeine@patapon.info', 'quake-terminal@diegodario88.github.io', 'blur-my-shell@aunetx', 'appindicatorsupport@rgcjonas.gmail.com']
+enabled-extensions=['search-light@icedman.github.com', 'caffeine@patapon.info', 'quake-terminal@diegodario88.github.io', 'appindicatorsupport@rgcjonas.gmail.com', 'Resource_Monitor@OryOn', 'blur-my-shell@aunetx']
 
 [org.gnome.shell.extensions.quake-terminal]
 terminal-shortcut=['F12']
