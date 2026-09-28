@@ -19,6 +19,7 @@ install:
     # external
     - https://github.com/go-task/task/releases/download/v3.52.0/task_3.52.0_linux_amd64.rpm
     # foundation
+    - fish
     - neovim
     - syncthing
     - gnome-text-editor
