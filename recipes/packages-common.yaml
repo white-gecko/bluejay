@@ -3,6 +3,11 @@ repos:
   copr:
     - atim/starship
     - jerrycasiano/FontManager
+group-install:
+  packages:
+    - virtualization
+    # see https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation-30/ and https://github.com/ublue-os/bluefin/blob/7aafce49db08d8d965a827582ce5dc806ac9017e/system_files/dx/usr/bin/bluefin-dx-groups#L4 if we want setup of the group
+    # maybe we need to set the group, and enable the service on new installations
 install:
   packages:
     - repo: copr:copr.fedorainfracloud.org:atim:starship
