@@ -23,11 +23,14 @@ install:
     # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
     - cups-pdf
     # system
+    - gparted
+    # network
     - NetworkManager-openconnect-gnome
     - NetworkManager-openvpn-gnome
     - NetworkManager-ssh-gnome
     - NetworkManager-vpnc-gnome
-    - gparted
+    - tailscale
+    - trayscale
     # gnome setup
     - gnome-shell-extension-caffeine
     - gnome-shell-extension-user-theme
