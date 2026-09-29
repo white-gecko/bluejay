@@ -76,7 +76,6 @@ install:
     - ansible-packaging
     - cargo
     - cmake
-    - entr
     - exiv2
     - gcc-c++
     - ghex
@@ -138,3 +137,4 @@ install:
     # temporary/staging
     # maybe remove
     # - calibre
+    # - entr
