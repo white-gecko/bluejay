@@ -13,11 +13,14 @@ install:
     - repo: copr:copr.fedorainfracloud.org:atim:starship
       packages:
         - starship
+
     # install from copr:copr.fedorainfracloud.org:jerrycasiano:FontManager
     # but requires dependencies from other repos
     - font-manager
+
     # external
     - https://github.com/go-task/task/releases/download/v3.53.1/task_3.53.1_linux_amd64.rpm
+
     # foundation
     - fish
     - neovim
@@ -25,10 +28,13 @@ install:
     - git
     - git-credential-libsecret
     - curl
+
     # Printer, see also /etc/cups/cups-pdf.conf and printers.conf
     - cups-pdf
+
     # system
     - gparted
+
     # network
     - NetworkManager-openconnect-gnome
     - NetworkManager-openvpn-gnome
@@ -36,91 +42,99 @@ install:
     - NetworkManager-vpnc-gnome
     - tailscale
     - trayscale
+
     # gnome setup
-    - gnome-shell-extension-caffeine
-    - gnome-shell-extension-user-theme
-    - gnome-shell-extension-appindicator
-    - gnome-shell-extension-gsconnect
-    - gnome-shell-extension-blur-my-shell
-    - gnome-remote-desktop
     - gnome-browser-connector
+    - gnome-remote-desktop
+    - gnome-shell-extension-appindicator
+    - gnome-shell-extension-blur-my-shell
+    - gnome-shell-extension-caffeine
+    - gnome-shell-extension-gsconnect
+    - gnome-shell-extension-user-theme
+
     # fonts
     - open-sans-fonts
+
     # handy tools
-    - tmux
-    - rsync
-    - restic
-    - pwgen
-    - htop
     - ack
-    - moreutils
-    - dos2unix
     - baobab
-    - yt-dlp
+    - dos2unix
     - fastfetch
+    - htop
+    - moreutils
+    - pwgen
+    - restic
+    - rsync
+    - tmux
+    - yt-dlp
+
     # development
-    - sqlitebrowser
-    - sqlite
-    - java-latest-openjdk
-    - maven
-    - ghex
-    - nodejs-npm
-    - optipng
-    - jpegoptim
-    - exiv2
-    - entr
-    - openssl
-    - cmake
-    - gcc-c++
-    - podman-docker
+    - android-tools
     - ansible
     - ansible-collection-ansible-posix
     - ansible-collection-community-docker
     - ansible-packaging
-    - android-tools
-    - rustup
-    - rust
     - cargo
-    - imapsync
+    - cmake
+    - entr
+    - exiv2
+    - gcc-c++
+    - ghex
     - gnuplot
+    - imapsync
+    - java-latest-openjdk
+    - jpegoptim
+    - maven
+    - nodejs-npm
+    - openssl
+    - optipng
     - pipx
+    - podman-docker
+    - python3-devel
     - python3-pip
     - python3-virtualenvwrapper
-    - python3-devel
+    - rust
+    - rustup
+    - sqlite
+    - sqlitebrowser
+
     # development: tauri
-    - webkit2gtk4.1-devel
-    - openssl-devel
     - libappindicator-gtk3-devel
     - librsvg2-devel
     - libxdo-devel
+    - openssl-devel
+    - webkit2gtk4.1-devel
+
     # desktop
-    - gnome-text-editor
-    - papers
-    - keepassxc
-    - chromium
-    - libreoffice
-    - langpacks-de
-    - langpacks-en
-    - hunspell-de
-    - hunspell-en
-    - gpsbabel
-    - qcad
-    - diffpdf
-    - xournal
-    - pdftk-java
-    - ocrmypdf
-    - tesseract-langpack-deu
-    - tesseract-langpack-frk
-    - tesseract-script-fraktur
-    - tesseract-osd
-    - file-roller-nautilus
-    - cheese
     - calls
+    - cheese
+    - chromium
+    - diffpdf
     - eog
     - eog-plugins
+    - file-roller-nautilus
+    - gnome-text-editor
+    - gpsbabel
+    - hunspell-de
+    - hunspell-en
+    - keepassxc
+    - langpacks-de
+    - langpacks-en
+    - libreoffice
+    - ocrmypdf
+    - papers
+    - pdftk-java
+    - qcad
+    - tesseract-langpack-deu
+    - tesseract-langpack-frk
+    - tesseract-osd
+    - tesseract-script-fraktur
+    - xournal
+
     # games
     - hedgewars
     - moon-buggy
+
     # temporary/staging
     # maybe remove
     # - calibre
