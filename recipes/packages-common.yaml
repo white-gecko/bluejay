@@ -22,7 +22,6 @@ install:
     - fish
     - neovim
     - syncthing
-    - gnome-text-editor
     - git
     - git-credential-libsecret
     - curl
@@ -48,6 +47,7 @@ install:
     # fonts
     - open-sans-fonts
     # handy tools
+    - tmux
     - rsync
     - restic
     - pwgen
@@ -55,11 +55,9 @@ install:
     - ack
     - moreutils
     - dos2unix
-    - diffpdf
     - baobab
-    - xournal
     - yt-dlp
-    - pdftk-java
+    - fastfetch
     # development
     - sqlitebrowser
     - sqlite
@@ -96,8 +94,8 @@ install:
     - librsvg2-devel
     - libxdo-devel
     # desktop
+    - gnome-text-editor
     - papers
-    - tmux
     - keepassxc
     - chromium
     - libreoffice
@@ -107,6 +105,9 @@ install:
     - hunspell-en
     - gpsbabel
     - qcad
+    - diffpdf
+    - xournal
+    - pdftk-java
     - ocrmypdf
     - tesseract-langpack-deu
     - tesseract-langpack-frk
@@ -117,9 +118,9 @@ install:
     - calls
     - eog
     - eog-plugins
-    - calibre
     # games
     - hedgewars
     - moon-buggy
     # temporary/staging
     # maybe remove
+    # - calibre
