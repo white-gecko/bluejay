@@ -1,4 +1,0 @@
-type: dnf
-remove:
-  packages:
-    - code

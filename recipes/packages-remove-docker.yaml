@@ -1,9 +1,0 @@
-type: dnf
-remove:
-  packages:
-    # conflicts with podman-docker
-    - docker-ce
-    - docker-ce-cli
-    - docker-buildx-plugin
-    - docker-compose-plugin
-    - docker-ce-rootless-extras
