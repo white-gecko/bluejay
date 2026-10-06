@@ -134,6 +134,9 @@ install:
     - hedgewars
     - moon-buggy
 
+    # dependency Appimage
+    - fuse-libs
+
     # temporary/staging
     # maybe remove
     # - calibre
