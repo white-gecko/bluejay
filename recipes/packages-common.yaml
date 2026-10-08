@@ -3,6 +3,7 @@ repos:
   copr:
     - atim/starship
     - jerrycasiano/FontManager
+    - mguessan/davmail
 group-install:
   packages:
     - virtualization
