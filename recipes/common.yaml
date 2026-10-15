@@ -1,8 +1,4 @@
 modules:
-  - type: gnome-extensions
-    install:
-      - Quake Terminal
-
   - type: fonts
     fonts:
       nerd-fonts:
