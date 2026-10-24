@@ -77,3 +77,8 @@ To provide the init bundle/the key file, mount it according to https://de.linux-
 To use latex you have two options:
 - install it in a toolbox, install zsh fasd fzf task texlive-import texlive-scheme-medium
 - use the podman image from https://github.com/white-gecko/alpine-texlive-full-plus
+
+### Disable to wait for a network interface
+
+See: https://www.baeldung.com/linux/systemd-networkd-wait-online-service-timeout-solution
+
