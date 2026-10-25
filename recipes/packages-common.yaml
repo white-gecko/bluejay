@@ -21,8 +21,6 @@ install:
 
     # external
     - https://github.com/go-task/task/releases/download/v3.53.1/task_3.53.1_linux_amd64.rpm
-    # Brother scan driver
-    - https://download.brother.com/welcome/dlf104036/brscan5-1.7.0-0.x86_64.rpm
 
     # foundation
     - fish

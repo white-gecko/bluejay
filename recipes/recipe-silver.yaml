@@ -13,6 +13,7 @@ modules:
   - from-file: packages-common.yaml
   - from-file: packages-codium.yaml
   - from-file: packages-firefox.yaml
+  - from-file: packages-brother.yaml
   - from-file: driver.yaml
   - from-file: flatpaks.yaml
   - from-file: brew.yaml
