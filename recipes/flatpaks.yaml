@@ -32,5 +32,6 @@ configurations:
       - org.musescore.MuseScore
       - org.openstreetmap.josm
       - org.signal.Signal
+      - page.tesk.Refine
       - re.sonny.Eloquent
       - re.sonny.Tangram

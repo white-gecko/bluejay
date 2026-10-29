@@ -13,8 +13,10 @@ modules:
   - from-file: packages-common.yaml
   - from-file: packages-codium.yaml
   - from-file: packages-firefox.yaml
+  - from-file: packages-brother.yaml
   - from-file: driver.yaml
   - from-file: flatpaks.yaml
   - from-file: brew.yaml
+  - from-file: gnome-extensions.yaml
   - from-file: common.yaml
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
