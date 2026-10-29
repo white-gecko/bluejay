@@ -6,6 +6,7 @@ configurations:
       # - org.mozilla.firefox
       # - org.gnome.Loupe
       # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+      #- org.gnome.SimpleScan
       - app.drey.Dialect
       - app.drey.Warp
       - com.belmoussaoui.Decoder
@@ -27,7 +28,6 @@ configurations:
       - io.podman_desktop.PodmanDesktop
       - org.gimp.GIMP
       - org.gnome.Fractal
-      - org.gnome.SimpleScan
       - org.inkscape.Inkscape
       - org.musescore.MuseScore
       - org.openstreetmap.josm

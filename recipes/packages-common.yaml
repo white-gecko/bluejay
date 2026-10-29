@@ -125,6 +125,7 @@ install:
     - papers
     - pdftk-java
     - qcad
+    - simple-scan
     - tesseract-langpack-deu
     - tesseract-langpack-frk
     - tesseract-osd
