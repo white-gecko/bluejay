@@ -130,6 +130,7 @@ install:
     - tesseract-langpack-frk
     - tesseract-osd
     - tesseract-script-fraktur
+    - waydroid
     - xournal
 
     # games
