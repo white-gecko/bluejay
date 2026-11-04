@@ -20,7 +20,7 @@ install:
     - font-manager
 
     # external
-    - https://github.com/go-task/task/releases/download/v3.53.1/task_3.53.1_linux_amd64.rpm
+    - https://github.com/go-task/task/releases/download/v3.54.0/task_3.54.0_linux_amd64.rpm
 
     # foundation
     - fish
