@@ -106,6 +106,7 @@ install:
     - webkit2gtk4.1-devel
 
     # desktop
+    - calibre
     - calls
     - cheese
     - chromium
@@ -142,5 +143,4 @@ install:
 
     # temporary/staging
     # maybe remove
-    # - calibre
     # - entr
