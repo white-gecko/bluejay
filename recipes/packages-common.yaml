@@ -113,6 +113,7 @@ install:
     - eog
     - eog-plugins
     - file-roller-nautilus
+    - gnome-sound-recorder
     - gnome-text-editor
     - gpsbabel
     - hunspell-de
