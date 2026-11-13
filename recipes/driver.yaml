@@ -2,7 +2,7 @@
 modules:
   - type: script
     snippets:
-      - "echo '% pkgverify_level digest' > /etc/rpm/macros.verify"
+      - "echo '%_pkgverify_level digest' > /etc/rpm/macros.verify"
   - type: akmods
     install:
       # install broadcom-wl from rpmfusion
